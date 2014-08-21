@@ -49,7 +49,12 @@ namespace ADO_NET___Proyecto_final
             else
             {
                 comboBox_TimeEnd.Enabled = true;
-                for (int i = comboBox_TimeStart.SelectedIndex + 1; i < 24; i++)
+                comboBox_TimeEnd.Items.Clear();
+                comboBox_TimeEnd.Text = string.Empty;
+                if (comboBox_TimeStart.SelectedIndex == 22)
+                    comboBox_TimeEnd.Items.Add(23);
+                else
+                for (int i = comboBox_TimeStart.SelectedIndex + 2; i < 24; i++)
                     comboBox_TimeEnd.Items.Add(i);
             }
         }

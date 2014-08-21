@@ -34,6 +34,9 @@
             System.Windows.Forms.Label customerIdLabel;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label2;
+            System.Windows.Forms.Label label3;
+            System.Windows.Forms.Label label4;
+            System.Windows.Forms.Label label5;
             this.projectAirlineDataSet = new ADO_NET___Proyecto_final.ProjectAirlineDataSet();
             this.cityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cityTableAdapter = new ADO_NET___Proyecto_final.ProjectAirlineDataSetTableAdapters.CityTableAdapter();
@@ -47,11 +50,18 @@
             this.customerIdComboBox = new System.Windows.Forms.ComboBox();
             this.comboBox_TimeStart = new System.Windows.Forms.ComboBox();
             this.comboBox_TimeEnd = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker_Departure = new System.Windows.Forms.DateTimePicker();
+            this.comboBox_Adults = new System.Windows.Forms.ComboBox();
+            this.comboBox_Children = new System.Windows.Forms.ComboBox();
+            this.button_SearchFlights = new System.Windows.Forms.Button();
             cityNameLabel = new System.Windows.Forms.Label();
             cityNameLabel1 = new System.Windows.Forms.Label();
             customerIdLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.projectAirlineDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource1)).BeginInit();
@@ -224,11 +234,81 @@
             this.comboBox_TimeEnd.Size = new System.Drawing.Size(57, 21);
             this.comboBox_TimeEnd.TabIndex = 9;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(120, 126);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(84, 13);
+            label3.TabIndex = 10;
+            label3.Text = "Departure date: ";
+            // 
+            // dateTimePicker_Departure
+            // 
+            this.dateTimePicker_Departure.Location = new System.Drawing.Point(205, 121);
+            this.dateTimePicker_Departure.Name = "dateTimePicker_Departure";
+            this.dateTimePicker_Departure.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker_Departure.TabIndex = 11;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(147, 162);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(42, 13);
+            label4.TabIndex = 12;
+            label4.Text = "Adults: ";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(286, 161);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(51, 13);
+            label5.TabIndex = 13;
+            label5.Text = "Children: ";
+            // 
+            // comboBox_Adults
+            // 
+            this.comboBox_Adults.FormattingEnabled = true;
+            this.comboBox_Adults.Items.AddRange(new object[] {
+            "1234"});
+            this.comboBox_Adults.Location = new System.Drawing.Point(204, 159);
+            this.comboBox_Adults.Name = "comboBox_Adults";
+            this.comboBox_Adults.Size = new System.Drawing.Size(57, 21);
+            this.comboBox_Adults.TabIndex = 14;
+            // 
+            // comboBox_Children
+            // 
+            this.comboBox_Children.FormattingEnabled = true;
+            this.comboBox_Children.Items.AddRange(new object[] {
+            "1234"});
+            this.comboBox_Children.Location = new System.Drawing.Point(343, 158);
+            this.comboBox_Children.Name = "comboBox_Children";
+            this.comboBox_Children.Size = new System.Drawing.Size(57, 21);
+            this.comboBox_Children.TabIndex = 15;
+            // 
+            // button_SearchFlights
+            // 
+            this.button_SearchFlights.Location = new System.Drawing.Point(106, 200);
+            this.button_SearchFlights.Name = "button_SearchFlights";
+            this.button_SearchFlights.Size = new System.Drawing.Size(364, 46);
+            this.button_SearchFlights.TabIndex = 16;
+            this.button_SearchFlights.Text = "Search flights";
+            this.button_SearchFlights.UseVisualStyleBackColor = true;
+            // 
             // SearchFlight
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 381);
+            this.ClientSize = new System.Drawing.Size(551, 300);
+            this.Controls.Add(this.button_SearchFlights);
+            this.Controls.Add(this.comboBox_Children);
+            this.Controls.Add(this.comboBox_Adults);
+            this.Controls.Add(label5);
+            this.Controls.Add(label4);
+            this.Controls.Add(this.dateTimePicker_Departure);
+            this.Controls.Add(label3);
             this.Controls.Add(this.comboBox_TimeEnd);
             this.Controls.Add(this.comboBox_TimeStart);
             this.Controls.Add(label2);
@@ -240,6 +320,7 @@
             this.Controls.Add(cityNameLabel);
             this.Controls.Add(this.cityNameComboBox);
             this.Name = "SearchFlight";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Make my trip - SearchFlight";
             this.Load += new System.EventHandler(this.SearchFlight_Load);
             ((System.ComponentModel.ISupportInitialize)(this.projectAirlineDataSet)).EndInit();
@@ -267,6 +348,10 @@
         private System.Windows.Forms.ComboBox customerIdComboBox;
         private System.Windows.Forms.ComboBox comboBox_TimeStart;
         private System.Windows.Forms.ComboBox comboBox_TimeEnd;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_Departure;
+        private System.Windows.Forms.ComboBox comboBox_Adults;
+        private System.Windows.Forms.ComboBox comboBox_Children;
+        private System.Windows.Forms.Button button_SearchFlights;
 
     }
 }
