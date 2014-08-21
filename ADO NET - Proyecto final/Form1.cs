@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ADO_NET___Proyecto_final
 {
-    public partial class Form1 : Form
+    public partial class SearchFlight : Form
     {
-        public Form1()
+        public SearchFlight()
         {
             InitializeComponent();
         }
