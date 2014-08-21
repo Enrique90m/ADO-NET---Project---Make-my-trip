@@ -47,6 +47,13 @@ CREATE TABLE Flight(
 ) ON [PRIMARY]
 
 
+ALTER TABLE Flight  WITH CHECK ADD  CONSTRAINT [Destination_FK] FOREIGN KEY([Destination])
+REFERENCES City ([CityCode])
+GO
+
+ALTER TABLE Flight  WITH CHECK ADD  CONSTRAINT [Source_FK] FOREIGN KEY([Source])
+REFERENCES City ([CityCode])
+GO
 --********************************************************************
 CREATE TABLE Flight_Booking(
 	[BookingId] [varchar](4) NOT NULL,
