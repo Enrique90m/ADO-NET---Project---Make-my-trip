@@ -44,10 +44,12 @@ namespace ADO_NET___Proyecto_final
 
         private void comboBox_TimeStart_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Si no selecciono nada, lo deshabilito
             if (comboBox_TimeStart.SelectedIndex == -1)
                 comboBox_TimeEnd.Enabled = false;
             else
             {
+                //Habilito el combo y dependiendo de lo que halla seleccionado, agrego las horas siguientes
                 comboBox_TimeEnd.Enabled = true;
                 comboBox_TimeEnd.Items.Clear();
                 comboBox_TimeEnd.Text = string.Empty;
@@ -56,6 +58,31 @@ namespace ADO_NET___Proyecto_final
                 else
                 for (int i = comboBox_TimeStart.SelectedIndex + 2; i < 24; i++)
                     comboBox_TimeEnd.Items.Add(i);
+            }
+        }
+
+        private void button_SearchFlights_Click(object sender, EventArgs e)
+        {
+            //Valido que halla capturado todo, aunque puede no capturar niños ya que no es obligatorio
+            if(string.IsNullOrEmpty(customerIdComboBox.Text) || string.IsNullOrEmpty(ComboBox_Destination.Text) || string.IsNullOrEmpty(ComboBox_Source.Text) ||
+                string.IsNullOrEmpty(comboBox_TimeStart.Text) || string.IsNullOrEmpty(comboBox_TimeEnd.Text) || string.IsNullOrEmpty(dateTimePicker_Departure.Text) || string.IsNullOrEmpty(comboBox_Adults.Text))
+            {
+                MessageBox.Show("Todos los campos a excepcion de niños, son obligatorios");
+                return;
+            }
+
+            //Valido que las ciudades del viaje sean diferentes
+            if (ComboBox_Destination.Text == ComboBox_Source.Text)
+            {
+                MessageBox.Show("Las ciudades deben ser diferentes");
+                return;
+            }
+
+            //Valido que la fecha que busca sea mayor o igual a la de hoy
+            if (DateTime.Parse(dateTimePicker_Departure.Value.ToString("yyyy-MM-dd")) < DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd")))
+            {
+                MessageBox.Show("La fecha buscada no puede ser anterior al dia de hoy!");
+                return;
             }
         }
 

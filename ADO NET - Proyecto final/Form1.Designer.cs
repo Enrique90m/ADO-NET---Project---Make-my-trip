@@ -42,9 +42,9 @@
             this.cityTableAdapter = new ADO_NET___Proyecto_final.ProjectAirlineDataSetTableAdapters.CityTableAdapter();
             this.tableAdapterManager = new ADO_NET___Proyecto_final.ProjectAirlineDataSetTableAdapters.TableAdapterManager();
             this.customerTableAdapter = new ADO_NET___Proyecto_final.ProjectAirlineDataSetTableAdapters.CustomerTableAdapter();
-            this.cityNameComboBox = new System.Windows.Forms.ComboBox();
+            this.ComboBox_Source = new System.Windows.Forms.ComboBox();
             this.cityBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.cityNameComboBox1 = new System.Windows.Forms.ComboBox();
+            this.ComboBox_Destination = new System.Windows.Forms.ComboBox();
             this.cityBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customerIdComboBox = new System.Windows.Forms.ComboBox();
@@ -74,18 +74,18 @@
             cityNameLabel.AutoSize = true;
             cityNameLabel.Location = new System.Drawing.Point(59, 50);
             cityNameLabel.Name = "cityNameLabel";
-            cityNameLabel.Size = new System.Drawing.Size(58, 13);
+            cityNameLabel.Size = new System.Drawing.Size(44, 13);
             cityNameLabel.TabIndex = 1;
-            cityNameLabel.Text = "City Name:";
+            cityNameLabel.Text = "Source ";
             // 
             // cityNameLabel1
             // 
             cityNameLabel1.AutoSize = true;
             cityNameLabel1.Location = new System.Drawing.Point(303, 53);
             cityNameLabel1.Name = "cityNameLabel1";
-            cityNameLabel1.Size = new System.Drawing.Size(58, 13);
+            cityNameLabel1.Size = new System.Drawing.Size(60, 13);
             cityNameLabel1.TabIndex = 2;
-            cityNameLabel1.Text = "City Name:";
+            cityNameLabel1.Text = "Destination";
             // 
             // customerIdLabel
             // 
@@ -142,34 +142,34 @@
             // 
             this.customerTableAdapter.ClearBeforeFill = true;
             // 
-            // cityNameComboBox
+            // ComboBox_Source
             // 
-            this.cityNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cityBindingSource, "CityName", true));
-            this.cityNameComboBox.DataSource = this.cityBindingSource1;
-            this.cityNameComboBox.DisplayMember = "CityName";
-            this.cityNameComboBox.FormattingEnabled = true;
-            this.cityNameComboBox.Location = new System.Drawing.Point(123, 47);
-            this.cityNameComboBox.Name = "cityNameComboBox";
-            this.cityNameComboBox.Size = new System.Drawing.Size(121, 21);
-            this.cityNameComboBox.TabIndex = 2;
-            this.cityNameComboBox.ValueMember = "CityName";
+            this.ComboBox_Source.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cityBindingSource, "CityName", true));
+            this.ComboBox_Source.DataSource = this.cityBindingSource1;
+            this.ComboBox_Source.DisplayMember = "CityName";
+            this.ComboBox_Source.FormattingEnabled = true;
+            this.ComboBox_Source.Location = new System.Drawing.Point(123, 47);
+            this.ComboBox_Source.Name = "ComboBox_Source";
+            this.ComboBox_Source.Size = new System.Drawing.Size(121, 21);
+            this.ComboBox_Source.TabIndex = 2;
+            this.ComboBox_Source.ValueMember = "CityName";
             // 
             // cityBindingSource1
             // 
             this.cityBindingSource1.DataMember = "City";
             this.cityBindingSource1.DataSource = this.projectAirlineDataSet;
             // 
-            // cityNameComboBox1
+            // ComboBox_Destination
             // 
-            this.cityNameComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cityBindingSource, "CityName", true));
-            this.cityNameComboBox1.DataSource = this.cityBindingSource2;
-            this.cityNameComboBox1.DisplayMember = "CityName";
-            this.cityNameComboBox1.FormattingEnabled = true;
-            this.cityNameComboBox1.Location = new System.Drawing.Point(367, 50);
-            this.cityNameComboBox1.Name = "cityNameComboBox1";
-            this.cityNameComboBox1.Size = new System.Drawing.Size(121, 21);
-            this.cityNameComboBox1.TabIndex = 3;
-            this.cityNameComboBox1.ValueMember = "CityName";
+            this.ComboBox_Destination.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cityBindingSource, "CityName", true));
+            this.ComboBox_Destination.DataSource = this.cityBindingSource2;
+            this.ComboBox_Destination.DisplayMember = "CityName";
+            this.ComboBox_Destination.FormattingEnabled = true;
+            this.ComboBox_Destination.Location = new System.Drawing.Point(367, 50);
+            this.ComboBox_Destination.Name = "ComboBox_Destination";
+            this.ComboBox_Destination.Size = new System.Drawing.Size(121, 21);
+            this.ComboBox_Destination.TabIndex = 3;
+            this.ComboBox_Destination.ValueMember = "CityName";
             // 
             // cityBindingSource2
             // 
@@ -272,7 +272,10 @@
             // 
             this.comboBox_Adults.FormattingEnabled = true;
             this.comboBox_Adults.Items.AddRange(new object[] {
-            "1234"});
+            "1",
+            "2",
+            "3",
+            "4"});
             this.comboBox_Adults.Location = new System.Drawing.Point(204, 159);
             this.comboBox_Adults.Name = "comboBox_Adults";
             this.comboBox_Adults.Size = new System.Drawing.Size(57, 21);
@@ -282,7 +285,10 @@
             // 
             this.comboBox_Children.FormattingEnabled = true;
             this.comboBox_Children.Items.AddRange(new object[] {
-            "1234"});
+            "1",
+            "2",
+            "3",
+            "4"});
             this.comboBox_Children.Location = new System.Drawing.Point(343, 158);
             this.comboBox_Children.Name = "comboBox_Children";
             this.comboBox_Children.Size = new System.Drawing.Size(57, 21);
@@ -296,6 +302,7 @@
             this.button_SearchFlights.TabIndex = 16;
             this.button_SearchFlights.Text = "Search flights";
             this.button_SearchFlights.UseVisualStyleBackColor = true;
+            this.button_SearchFlights.Click += new System.EventHandler(this.button_SearchFlights_Click);
             // 
             // SearchFlight
             // 
@@ -316,9 +323,9 @@
             this.Controls.Add(customerIdLabel);
             this.Controls.Add(this.customerIdComboBox);
             this.Controls.Add(cityNameLabel1);
-            this.Controls.Add(this.cityNameComboBox1);
+            this.Controls.Add(this.ComboBox_Destination);
             this.Controls.Add(cityNameLabel);
-            this.Controls.Add(this.cityNameComboBox);
+            this.Controls.Add(this.ComboBox_Source);
             this.Name = "SearchFlight";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Make my trip - SearchFlight";
@@ -339,9 +346,9 @@
         private System.Windows.Forms.BindingSource cityBindingSource;
         private ProjectAirlineDataSetTableAdapters.CityTableAdapter cityTableAdapter;
         private ProjectAirlineDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.ComboBox cityNameComboBox;
+        private System.Windows.Forms.ComboBox ComboBox_Source;
         private System.Windows.Forms.BindingSource cityBindingSource1;
-        private System.Windows.Forms.ComboBox cityNameComboBox1;
+        private System.Windows.Forms.ComboBox ComboBox_Destination;
         private System.Windows.Forms.BindingSource cityBindingSource2;
         private ProjectAirlineDataSetTableAdapters.CustomerTableAdapter customerTableAdapter;
         private System.Windows.Forms.BindingSource customerBindingSource;
