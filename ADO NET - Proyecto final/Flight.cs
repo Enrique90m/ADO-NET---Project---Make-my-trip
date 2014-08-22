@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ADO_NET___Proyecto_final
 {
-    class Flight
+    public class Flight
     {
         //Atributos
         protected int iFlightNo { get; set; }
@@ -35,7 +35,7 @@ namespace ADO_NET___Proyecto_final
         {
         }
 
-        public string Source
+        public  string Source
         {
             get
             {

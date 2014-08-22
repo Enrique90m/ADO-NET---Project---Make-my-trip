@@ -16,3 +16,4 @@ C:\Users\Juan Nolazco\Desktop\IDETI\ADO C#\ADO NET - Proyecto final\ADO-NET---Pr
 C:\Users\Juan Nolazco\Desktop\IDETI\ADO C#\ADO NET - Proyecto final\ADO-NET---Project---Make-my-trip\ADO NET - Proyecto final\obj\Debug\ADO_NET___Proyecto_final.Properties.Resources.resources
 C:\Users\Juan Nolazco\Desktop\IDETI\ADO C#\ADO NET - Proyecto final\ADO-NET---Project---Make-my-trip\ADO NET - Proyecto final\obj\Debug\ADO NET - Proyecto final.csproj.GenerateResource.Cache
 C:\Users\Juan Nolazco\Desktop\IDETI\ADO C#\ADO NET - Proyecto final\ADO-NET---Project---Make-my-trip\ADO NET - Proyecto final\obj\Debug\ADO_NET___Proyecto_final.Form_SearchFlight.resources
+C:\Users\Juan Nolazco\Desktop\IDETI\ADO C#\ADO NET - Proyecto final\ADO-NET---Project---Make-my-trip\ADO NET - Proyecto final\obj\Debug\ADO_NET___Proyecto_final.DisplayFlight.resources

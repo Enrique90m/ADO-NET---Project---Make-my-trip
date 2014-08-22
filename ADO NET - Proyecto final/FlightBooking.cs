@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ADO_NET___Proyecto_final
 {
-    class FlightBooking : Flight
+   public class FlightBooking : Flight
     {
         //Atributos
         int iBookingId { get; set; }
@@ -29,6 +29,43 @@ namespace ADO_NET___Proyecto_final
 
         public FlightBooking()
         {
+        }
+
+        public int CustomerId
+        {
+            get
+            {
+                return iCustomerId;
+            }
+
+            set
+            {
+                iCustomerId = value;
+            }
+        }
+        public int NoOfAdults
+        {
+            get
+            {
+                return iNoOfAdults;
+            }
+
+            set
+            {
+                iNoOfAdults = value;
+            }
+        }
+        public int NoOfChildren
+        {
+            get
+            {
+                return iNoOfChildren;
+            }
+
+            set
+            {
+                iNoOfChildren = value;
+            }
         }
     }
 }

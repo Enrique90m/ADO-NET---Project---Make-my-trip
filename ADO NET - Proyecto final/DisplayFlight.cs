@@ -12,9 +12,16 @@ namespace ADO_NET___Proyecto_final
 {
     public partial class DisplayFlight : Form
     {
-        public DisplayFlight()
+        SearchFlight ObjSearchFligfht;
+        public DisplayFlight(SearchFlight sf)
         {
             InitializeComponent();
+            ObjSearchFligfht = new SearchFlight(sf.Source,sf.Destination,sf.TimeStart,sf.TimeEnd,sf.CustomerId,DateTime.Now,sf.NoOfAdults,sf.NoOfChildren, sf.SearchedDate);
+        }
+
+        private void DisplayFlight_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

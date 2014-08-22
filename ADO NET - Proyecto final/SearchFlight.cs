@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ADO_NET___Proyecto_final
 {
-    class SearchFlight : FlightBooking
+    public class SearchFlight: FlightBooking
     {
         //Atributos
         string sSource { get; set; }
@@ -27,5 +27,105 @@ namespace ADO_NET___Proyecto_final
             iNoOfAdults = piNoOfAdults;
             dtSearchedDate = pdtSearchedDate;
         }
+
+        public string Source
+        {
+            get
+            {
+                return sSource;
+            }
+
+            set
+            {
+                sSource = value;
+            }
+        }
+        public string Destination
+        {
+            get
+            {
+                return sDestination;
+            }
+
+            set
+            {
+                sDestination = value;
+            }
+        }
+        public int TimeStart
+        {
+            get
+            {
+                return iTimeStart;
+            }
+
+            set
+            {
+                iTimeStart = value;
+            }
+        }
+        public int TimeEnd
+        {
+            get
+            {
+                return iTimeEnd;
+            }
+
+            set
+            {
+                iTimeEnd = value;
+            }
+        }
+        public DateTime SearchedDate
+        {
+            get
+            {
+                return dtSearchedDate;
+            }
+
+            set
+            {
+                dtSearchedDate = value;
+            }
+        }
+        public int CustomerId
+        {
+            get
+            {
+                return iCustomerId;
+            }
+
+            set
+            {
+                iCustomerId = value;
+            }
+        }
+        public int NoOfAdults
+        {
+            get
+            {
+                return iNoOfAdults;
+            }
+
+            set
+            {
+                iNoOfAdults = value;
+            }
+        }
+        public int NoOfChildren
+        {
+            get
+            {
+                return iNoOfChildren;
+            }
+
+            set
+            {
+                iNoOfChildren = value;
+            }
+        }
+
+
+
     }
 }

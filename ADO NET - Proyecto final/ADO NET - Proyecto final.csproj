@@ -66,6 +66,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchFlight.cs" />
+    <EmbeddedResource Include="DisplayFlight.resx">
+      <DependentUpon>DisplayFlight.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_SearchFlight.resx">
       <DependentUpon>Form_SearchFlight.cs</DependentUpon>
     </EmbeddedResource>
