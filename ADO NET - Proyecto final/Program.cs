@@ -16,7 +16,7 @@ namespace ADO_NET___Proyecto_final
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SearchFlight());
+            Application.Run(new Form_SearchFlight());
         }
     }
 }

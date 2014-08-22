@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ADO_NET___Proyecto_final
 {
-    public partial class SearchFlight : Form
+    public partial class Form_SearchFlight : Form
     {
-        public SearchFlight()
+        public Form_SearchFlight()
         {
             InitializeComponent();
         }
@@ -63,6 +63,7 @@ namespace ADO_NET___Proyecto_final
 
         private void button_SearchFlights_Click(object sender, EventArgs e)
         {
+
             //Valido que halla capturado todo, aunque puede no capturar niños ya que no es obligatorio
             if(string.IsNullOrEmpty(customerIdComboBox.Text) || string.IsNullOrEmpty(ComboBox_Destination.Text) || string.IsNullOrEmpty(ComboBox_Source.Text) ||
                 string.IsNullOrEmpty(comboBox_TimeStart.Text) || string.IsNullOrEmpty(comboBox_TimeEnd.Text) || string.IsNullOrEmpty(dateTimePicker_Departure.Text) || string.IsNullOrEmpty(comboBox_Adults.Text))
@@ -81,9 +82,12 @@ namespace ADO_NET___Proyecto_final
             //Valido que la fecha que busca sea mayor o igual a la de hoy
             if (DateTime.Parse(dateTimePicker_Departure.Value.ToString("yyyy-MM-dd")) < DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd")))
             {
+
                 MessageBox.Show("La fecha buscada no puede ser anterior al dia de hoy!");
                 return;
             }
+
+           
         }
 
        

@@ -1,6 +1,6 @@
 ﻿namespace ADO_NET___Proyecto_final
 {
-    partial class SearchFlight
+    partial class Form_SearchFlight
     {
         /// <summary>
         /// Required designer variable.
