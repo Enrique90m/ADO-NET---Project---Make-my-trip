@@ -30,20 +30,21 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label_Source = new System.Windows.Forms.Label();
+            this.label_Destination = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label_DepartureDate = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.label_TimeStart = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.label_TimeEnd = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.label_Adults = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.label_Children = new System.Windows.Forms.Label();
+            this.label_ChildrenText = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.flightTableAdapter1 = new ADO_NET___Proyecto_final.ProjectAirlineDataSetTableAdapters.FlightTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,25 +66,25 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "To: ";
             // 
-            // label3
+            // label_Source
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(184, 47);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "To: ";
+            this.label_Source.AutoSize = true;
+            this.label_Source.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Source.Location = new System.Drawing.Point(184, 47);
+            this.label_Source.Name = "label_Source";
+            this.label_Source.Size = new System.Drawing.Size(31, 15);
+            this.label_Source.TabIndex = 2;
+            this.label_Source.Text = "To: ";
             // 
-            // label4
+            // label_Destination
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(350, 47);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 15);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "To: ";
+            this.label_Destination.AutoSize = true;
+            this.label_Destination.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Destination.Location = new System.Drawing.Point(350, 47);
+            this.label_Destination.Name = "label_Destination";
+            this.label_Destination.Size = new System.Drawing.Size(31, 15);
+            this.label_Destination.TabIndex = 3;
+            this.label_Destination.Text = "To: ";
             // 
             // label5
             // 
@@ -94,15 +95,15 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Departure date";
             // 
-            // label6
+            // label_DepartureDate
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(184, 85);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(31, 15);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "To: ";
+            this.label_DepartureDate.AutoSize = true;
+            this.label_DepartureDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_DepartureDate.Location = new System.Drawing.Point(184, 85);
+            this.label_DepartureDate.Name = "label_DepartureDate";
+            this.label_DepartureDate.Size = new System.Drawing.Size(31, 15);
+            this.label_DepartureDate.TabIndex = 5;
+            this.label_DepartureDate.Text = "To: ";
             // 
             // label7
             // 
@@ -113,15 +114,15 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Departure time between ";
             // 
-            // label8
+            // label_TimeStart
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(238, 116);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(31, 15);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "To: ";
+            this.label_TimeStart.AutoSize = true;
+            this.label_TimeStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TimeStart.Location = new System.Drawing.Point(238, 116);
+            this.label_TimeStart.Name = "label_TimeStart";
+            this.label_TimeStart.Size = new System.Drawing.Size(31, 15);
+            this.label_TimeStart.TabIndex = 7;
+            this.label_TimeStart.Text = "To: ";
             // 
             // label9
             // 
@@ -132,15 +133,15 @@
             this.label9.TabIndex = 8;
             this.label9.Text = "To: ";
             // 
-            // label10
+            // label_TimeEnd
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(350, 118);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(31, 15);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "To: ";
+            this.label_TimeEnd.AutoSize = true;
+            this.label_TimeEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TimeEnd.Location = new System.Drawing.Point(350, 118);
+            this.label_TimeEnd.Name = "label_TimeEnd";
+            this.label_TimeEnd.Size = new System.Drawing.Size(31, 15);
+            this.label_TimeEnd.TabIndex = 9;
+            this.label_TimeEnd.Text = "To: ";
             // 
             // label11
             // 
@@ -151,15 +152,15 @@
             this.label11.TabIndex = 10;
             this.label11.Text = "Travellers |";
             // 
-            // label12
+            // label_Adults
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(615, 47);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(15, 15);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "0";
+            this.label_Adults.AutoSize = true;
+            this.label_Adults.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Adults.Location = new System.Drawing.Point(615, 47);
+            this.label_Adults.Name = "label_Adults";
+            this.label_Adults.Size = new System.Drawing.Size(15, 15);
+            this.label_Adults.TabIndex = 11;
+            this.label_Adults.Text = "0";
             // 
             // label13
             // 
@@ -171,25 +172,27 @@
             this.label13.TabIndex = 12;
             this.label13.Text = "Adults";
             // 
-            // label14
+            // label_Children
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(740, 48);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(15, 15);
-            this.label14.TabIndex = 13;
-            this.label14.Text = "0";
+            this.label_Children.AutoSize = true;
+            this.label_Children.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Children.Location = new System.Drawing.Point(740, 48);
+            this.label_Children.Name = "label_Children";
+            this.label_Children.Size = new System.Drawing.Size(15, 15);
+            this.label_Children.TabIndex = 13;
+            this.label_Children.Text = "0";
+            this.label_Children.Visible = false;
             // 
-            // label15
+            // label_ChildrenText
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(761, 49);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(61, 15);
-            this.label15.TabIndex = 14;
-            this.label15.Text = "Children";
+            this.label_ChildrenText.AutoSize = true;
+            this.label_ChildrenText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ChildrenText.Location = new System.Drawing.Point(761, 49);
+            this.label_ChildrenText.Name = "label_ChildrenText";
+            this.label_ChildrenText.Size = new System.Drawing.Size(61, 15);
+            this.label_ChildrenText.TabIndex = 14;
+            this.label_ChildrenText.Text = "Children";
+            this.label_ChildrenText.Visible = false;
             // 
             // dataGridView1
             // 
@@ -199,25 +202,29 @@
             this.dataGridView1.Size = new System.Drawing.Size(722, 185);
             this.dataGridView1.TabIndex = 15;
             // 
+            // flightTableAdapter1
+            // 
+            this.flightTableAdapter1.ClearBeforeFill = true;
+            // 
             // DisplayFlight
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 393);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label_ChildrenText);
+            this.Controls.Add(this.label_Children);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label_Adults);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label_TimeEnd);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label_TimeStart);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label_DepartureDate);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label_Destination);
+            this.Controls.Add(this.label_Source);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "DisplayFlight";
@@ -234,19 +241,20 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label_Source;
+        private System.Windows.Forms.Label label_Destination;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label_DepartureDate;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label_TimeStart;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label_TimeEnd;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label_Adults;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label_Children;
+        private System.Windows.Forms.Label label_ChildrenText;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private ProjectAirlineDataSetTableAdapters.FlightTableAdapter flightTableAdapter1;
     }
 }
