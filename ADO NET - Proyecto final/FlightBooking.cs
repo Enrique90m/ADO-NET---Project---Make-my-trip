@@ -26,5 +26,9 @@ namespace ADO_NET___Proyecto_final
             iNoOfAdults = piNoOfAdults;
             iNoOfChildren = piNoOfChildren;
         }
+
+        public FlightBooking()
+        {
+        }
     }
 }
