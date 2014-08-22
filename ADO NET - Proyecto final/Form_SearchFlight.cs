@@ -87,7 +87,10 @@ namespace ADO_NET___Proyecto_final
                 return;
             }
 
-           
+           //Creo objeto para enviarlo al siguiente formulario
+            SearchFlight sfl = new SearchFlight(ComboBox_Source.Text, ComboBox_Destination.Text, int.Parse(comboBox_TimeStart.Text), int.Parse(comboBox_TimeEnd.Text), 
+                                                int.Parse(customerIdComboBox.Text),DateTime.Now, int.Parse(comboBox_Adults.Text), int.Parse(comboBox_Children.Text), dateTimePicker_Departure.Value.Date);
+            DisplayFlight df = new DisplayFlight(sfl);
         }
 
        

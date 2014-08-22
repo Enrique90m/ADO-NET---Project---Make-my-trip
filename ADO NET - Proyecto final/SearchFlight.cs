@@ -13,15 +13,19 @@ namespace ADO_NET___Proyecto_final
         string sDestination { get; set; }
         int iTimeStart { get; set; }
         int iTimeEnd { get; set; }
+        DateTime dtSearchedDate { get; set; }
 
         //Contructores
-        public SearchFlight(string psSource, string psDestination, int piTimeStart, int piTimeEnd, int piCustomerId, DateTime pdtDateOfBooking )
+        public SearchFlight(string psSource, string psDestination, int piTimeStart, int piTimeEnd, int piCustomerId, DateTime pdtDateOfBooking, int piNoOfAdults, int piNoOfChildren, DateTime pdtSearchedDate)
         {
             sSource = psSource;
             sDestination = psDestination;
             iTimeStart = piTimeStart;
             iTimeEnd = piTimeEnd;
-            
+            dtDateOfBooking = pdtDateOfBooking;
+            iNoOfChildren = piNoOfChildren;
+            iNoOfAdults = piNoOfAdults;
+            dtSearchedDate = pdtSearchedDate;
         }
     }
 }

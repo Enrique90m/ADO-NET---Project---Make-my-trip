@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DisplayFlight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisplayFlight.Designer.cs">
+      <DependentUpon>DisplayFlight.cs</DependentUpon>
+    </Compile>
     <Compile Include="Flight.cs" />
     <Compile Include="FlightBooking.cs" />
     <Compile Include="Form_SearchFlight.cs">
