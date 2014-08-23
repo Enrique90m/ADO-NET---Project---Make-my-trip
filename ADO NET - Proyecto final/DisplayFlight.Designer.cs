@@ -43,9 +43,9 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label_Children = new System.Windows.Forms.Label();
             this.label_ChildrenText = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView_Flights = new System.Windows.Forms.DataGridView();
             this.flightTableAdapter1 = new ADO_NET___Proyecto_final.ProjectAirlineDataSetTableAdapters.FlightTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Flights)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -194,13 +194,13 @@
             this.label_ChildrenText.Text = "Children";
             this.label_ChildrenText.Visible = false;
             // 
-            // dataGridView1
+            // dataGridView_Flights
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(100, 159);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(722, 185);
-            this.dataGridView1.TabIndex = 15;
+            this.dataGridView_Flights.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Flights.Location = new System.Drawing.Point(100, 159);
+            this.dataGridView_Flights.Name = "dataGridView_Flights";
+            this.dataGridView_Flights.Size = new System.Drawing.Size(722, 185);
+            this.dataGridView_Flights.TabIndex = 15;
             // 
             // flightTableAdapter1
             // 
@@ -211,7 +211,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 393);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridView_Flights);
             this.Controls.Add(this.label_ChildrenText);
             this.Controls.Add(this.label_Children);
             this.Controls.Add(this.label13);
@@ -231,7 +231,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Make my trip -DisplayFlight";
             this.Load += new System.EventHandler(this.DisplayFlight_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Flights)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,7 +254,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label_Children;
         private System.Windows.Forms.Label label_ChildrenText;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView_Flights;
         private ProjectAirlineDataSetTableAdapters.FlightTableAdapter flightTableAdapter1;
     }
 }
