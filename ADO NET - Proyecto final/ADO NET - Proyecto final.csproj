@@ -59,6 +59,10 @@
       <DependentUpon>Form_SearchFlight.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="ProjectAirlineDataSet.cs">
+      <DependentUpon>ProjectAirlineDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ProjectAirlineDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

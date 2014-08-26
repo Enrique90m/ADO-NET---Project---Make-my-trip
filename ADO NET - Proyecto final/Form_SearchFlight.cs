@@ -92,17 +92,17 @@ namespace ADO_NET___Proyecto_final
 
             //Si capturo niños creo objeto con ellos, de lo contrario envio un 0
             if(!string.IsNullOrEmpty(comboBox_Children.Text))
-                sfl = new SearchFlight(ComboBox_Source.Text, ComboBox_Destination.Text, int.Parse(comboBox_TimeStart.Text), int.Parse(comboBox_TimeEnd.Text),
+                sfl = new SearchFlight(this.cityTableAdapter.BuscaCodigoCiudad(ComboBox_Source.Text), this.cityTableAdapter.BuscaCodigoCiudad(ComboBox_Destination.Text), int.Parse(comboBox_TimeStart.Text), int.Parse(comboBox_TimeEnd.Text),
                                                 int.Parse(customerIdComboBox.Text), DateTime.Now, int.Parse(comboBox_Adults.Text), int.Parse(comboBox_Children.Text), dateTimePicker_Departure.Value.Date);
             else
-                sfl = new SearchFlight(ComboBox_Source.Text, ComboBox_Destination.Text, int.Parse(comboBox_TimeStart.Text), int.Parse(comboBox_TimeEnd.Text),
+                sfl = new SearchFlight(this.cityTableAdapter.BuscaCodigoCiudad(ComboBox_Source.Text), this.cityTableAdapter.BuscaCodigoCiudad(ComboBox_Destination.Text), int.Parse(comboBox_TimeStart.Text), int.Parse(comboBox_TimeEnd.Text),
                                                int.Parse(customerIdComboBox.Text), DateTime.Now, int.Parse(comboBox_Adults.Text), 0, dateTimePicker_Departure.Value.Date);
 
 
             DisplayFlight df = new DisplayFlight(sfl);
-            this.Tag = "1";
-            this.Hide();
-            df.Show();
+            df.Tag = this;
+            df.Show(this);
+            Hide();
         }
 
        
