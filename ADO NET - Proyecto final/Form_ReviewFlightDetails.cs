@@ -15,6 +15,7 @@ namespace ADO_NET___Proyecto_final
         Flight ObjFlight;
         int iAdults;
         int iChildren;
+        double BaseFareAdults, BaseFareChildren, TaxAdult, TaxChildren, TotalAdult, TotalChildren, GrandTotal;
 
         public Form_ReviewFlightDetails(Flight fl, int piAdults, int piChildren)
         {
@@ -32,7 +33,6 @@ namespace ADO_NET___Proyecto_final
         private void Form_ReviewFlightDetails_Load(object sender, EventArgs e)
         {
             //Calculo lo que debe pagar... tax, total
-            double BaseFareAdults, BaseFareChildren, TaxAdult, TaxChildren, TotalAdult, TotalChildren, GrandTotal;
             BaseFareAdults = iAdults * ObjFlight.AdultFare;
             BaseFareChildren = iChildren * ObjFlight.ChildrenFare;
             TaxAdult = BaseFareAdults * 0.10;
@@ -56,6 +56,16 @@ namespace ADO_NET___Proyecto_final
             label_TotalAdults.Text = TotalAdult.ToString();
             label_TotalChildren.Text = TotalChildren.ToString();
             label_GrandTotal.Text = GrandTotal.ToString();
+
+        }
+
+        private void button_BookThisFlight_Click(object sender, EventArgs e)
+        {
+            //DisplayFlight df = new DisplayFlight(sfl);
+            //df.Tag = this;
+            //df.Show(this);
+            //Hide();
+
 
         }
 

@@ -65,6 +65,12 @@
     <Compile Include="Form_SearchFlight.Designer.cs">
       <DependentUpon>Form_SearchFlight.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_TravelerDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_TravelerDetails.Designer.cs">
+      <DependentUpon>Form_TravelerDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="ProjectAirlineDataSet.cs">
       <DependentUpon>ProjectAirlineDataSet.xsd</DependentUpon>
@@ -86,6 +92,9 @@
     <EmbeddedResource Include="Form_SearchFlight.resx">
       <DependentUpon>Form_SearchFlight.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_TravelerDetails.resx">
+      <DependentUpon>Form_TravelerDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -94,6 +103,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="ProjectAirlineDataSet.xsc">
       <DependentUpon>ProjectAirlineDataSet.xsd</DependentUpon>

@@ -406,6 +406,7 @@
             this.button_BookThisFlight.TabIndex = 48;
             this.button_BookThisFlight.Text = "Book this flight";
             this.button_BookThisFlight.UseVisualStyleBackColor = true;
+            this.button_BookThisFlight.Click += new System.EventHandler(this.button_BookThisFlight_Click);
             // 
             // Form_ReviewFlightDetails
             // 

@@ -12,6 +12,7 @@ namespace ADO_NET___Proyecto_final
 {
     public partial class Form_SearchFlight : Form
     {
+        public string CustomerID;
         public Form_SearchFlight()
         {
             InitializeComponent();
@@ -97,7 +98,7 @@ namespace ADO_NET___Proyecto_final
             else
                 sfl = new SearchFlight(this.cityTableAdapter.BuscaCodigoCiudad(ComboBox_Source.Text), this.cityTableAdapter.BuscaCodigoCiudad(ComboBox_Destination.Text), int.Parse(comboBox_TimeStart.Text), int.Parse(comboBox_TimeEnd.Text),
                                                int.Parse(customerIdComboBox.Text), DateTime.Now, int.Parse(comboBox_Adults.Text), 0, dateTimePicker_Departure.Value.Date);
-
+            CustomerID = customerIdComboBox.Text;
 
             DisplayFlight df = new DisplayFlight(sfl);
             df.Tag = this;
