@@ -31,8 +31,16 @@ namespace ADO_NET___Proyecto_final
             iTotalPassenger = piTotalPassenger;
         }
 
-        public Flight()
+        public Flight( Flight fl)
         {
+            iFlightNo = fl.iFlightNo;
+            sSource = fl.sSource;
+            sDestination = fl.sDestination;
+            dtDeparture = fl.dtDeparture;
+            dtArrivalDate = fl.dtArrivalDate;
+            iAdultFare = fl.iAdultFare;
+            iChildrenFare = fl.iChildrenFare;
+            iTotalPassenger = fl.iTotalPassenger;
         }
 
         public  string Source
@@ -47,8 +55,90 @@ namespace ADO_NET___Proyecto_final
                 sSource = value;
             }
         }
+        public string Destination
+        {
+            get
+            {
+                return sDestination;
+            }
 
+            set
+            {
+                sDestination = value;
+            }
+        }
+        public int FlightNo
+        {
+            get
+            {
+                return iFlightNo;
+            }
 
+            set
+            {
+                iFlightNo = value;
+            }
+        }
+        public int AdultFare
+        {
+            get
+            {
+                return iAdultFare;
+            }
+
+            set
+            {
+                iAdultFare = value;
+            }
+        }
+        public int ChildrenFare
+        {
+            get
+            {
+                return iChildrenFare;
+            }
+
+            set
+            {
+                iChildrenFare = value;
+            }
+        }
+        public int TotalPassenger
+        {
+            get
+            {
+                return iTotalPassenger;
+            }
+
+            set
+            {
+                iTotalPassenger = value;
+            }
+        }
+        public DateTime Departure
+        {
+            get
+            {
+                return dtDeparture;
+            }
+
+            set
+            {
+                dtDeparture = value;
+            }
+        }
+        public DateTime ArrivalDate
+        {
+            get
+            {
+                return dtArrivalDate;
+            }
+
+            set
+            {
+                dtArrivalDate = value;
+            }
+        }
 
     }
 }

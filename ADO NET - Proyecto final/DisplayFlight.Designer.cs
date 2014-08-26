@@ -45,11 +45,6 @@
             this.label_Children = new System.Windows.Forms.Label();
             this.label_ChildrenText = new System.Windows.Forms.Label();
             this.dataGridView_Flights = new System.Windows.Forms.DataGridView();
-            this.flightBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.projectAirlineDataSet = new ADO_NET___Proyecto_final.ProjectAirlineDataSet();
-            this.flightTableAdapter1 = new ADO_NET___Proyecto_final.ProjectAirlineDataSetTableAdapters.FlightTableAdapter();
-            this.label_NoRecordsFound = new System.Windows.Forms.Label();
-            this.button_Back = new System.Windows.Forms.Button();
             this.flightNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sourceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.destinationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +54,11 @@
             this.childFareDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalPassengerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ButtonSelectFlight = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.flightBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projectAirlineDataSet = new ADO_NET___Proyecto_final.ProjectAirlineDataSet();
+            this.flightTableAdapter1 = new ADO_NET___Proyecto_final.ProjectAirlineDataSetTableAdapters.FlightTableAdapter();
+            this.label_NoRecordsFound = new System.Windows.Forms.Label();
+            this.button_Back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Flights)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.flightBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectAirlineDataSet)).BeginInit();
@@ -213,6 +213,7 @@
             // dataGridView_Flights
             // 
             this.dataGridView_Flights.AllowUserToAddRows = false;
+            this.dataGridView_Flights.AllowUserToDeleteRows = false;
             this.dataGridView_Flights.AutoGenerateColumns = false;
             this.dataGridView_Flights.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Flights.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -231,6 +232,72 @@
             this.dataGridView_Flights.ReadOnly = true;
             this.dataGridView_Flights.Size = new System.Drawing.Size(943, 185);
             this.dataGridView_Flights.TabIndex = 15;
+            this.dataGridView_Flights.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Flights_CellContentClick);
+            // 
+            // flightNoDataGridViewTextBoxColumn
+            // 
+            this.flightNoDataGridViewTextBoxColumn.DataPropertyName = "FlightNo";
+            this.flightNoDataGridViewTextBoxColumn.HeaderText = "FlightNo";
+            this.flightNoDataGridViewTextBoxColumn.Name = "flightNoDataGridViewTextBoxColumn";
+            this.flightNoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sourceDataGridViewTextBoxColumn
+            // 
+            this.sourceDataGridViewTextBoxColumn.DataPropertyName = "Source";
+            this.sourceDataGridViewTextBoxColumn.HeaderText = "Source";
+            this.sourceDataGridViewTextBoxColumn.Name = "sourceDataGridViewTextBoxColumn";
+            this.sourceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // destinationDataGridViewTextBoxColumn
+            // 
+            this.destinationDataGridViewTextBoxColumn.DataPropertyName = "Destination";
+            this.destinationDataGridViewTextBoxColumn.HeaderText = "Destination";
+            this.destinationDataGridViewTextBoxColumn.Name = "destinationDataGridViewTextBoxColumn";
+            this.destinationDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // departureDateDataGridViewTextBoxColumn
+            // 
+            this.departureDateDataGridViewTextBoxColumn.DataPropertyName = "DepartureDate";
+            this.departureDateDataGridViewTextBoxColumn.HeaderText = "DepartureDate";
+            this.departureDateDataGridViewTextBoxColumn.Name = "departureDateDataGridViewTextBoxColumn";
+            this.departureDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // arrivalDateDataGridViewTextBoxColumn
+            // 
+            this.arrivalDateDataGridViewTextBoxColumn.DataPropertyName = "ArrivalDate";
+            this.arrivalDateDataGridViewTextBoxColumn.HeaderText = "ArrivalDate";
+            this.arrivalDateDataGridViewTextBoxColumn.Name = "arrivalDateDataGridViewTextBoxColumn";
+            this.arrivalDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // adultFareDataGridViewTextBoxColumn
+            // 
+            this.adultFareDataGridViewTextBoxColumn.DataPropertyName = "AdultFare";
+            this.adultFareDataGridViewTextBoxColumn.HeaderText = "AdultFare";
+            this.adultFareDataGridViewTextBoxColumn.Name = "adultFareDataGridViewTextBoxColumn";
+            this.adultFareDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // childFareDataGridViewTextBoxColumn
+            // 
+            this.childFareDataGridViewTextBoxColumn.DataPropertyName = "ChildFare";
+            this.childFareDataGridViewTextBoxColumn.HeaderText = "ChildFare";
+            this.childFareDataGridViewTextBoxColumn.Name = "childFareDataGridViewTextBoxColumn";
+            this.childFareDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // totalPassengerDataGridViewTextBoxColumn
+            // 
+            this.totalPassengerDataGridViewTextBoxColumn.DataPropertyName = "TotalPassenger";
+            this.totalPassengerDataGridViewTextBoxColumn.HeaderText = "TotalPassenger";
+            this.totalPassengerDataGridViewTextBoxColumn.Name = "totalPassengerDataGridViewTextBoxColumn";
+            this.totalPassengerDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ButtonSelectFlight
+            // 
+            this.ButtonSelectFlight.HeaderText = "";
+            this.ButtonSelectFlight.Name = "ButtonSelectFlight";
+            this.ButtonSelectFlight.ReadOnly = true;
+            this.ButtonSelectFlight.Text = "Choose this flight";
+            this.ButtonSelectFlight.ToolTipText = "Choose this flight";
+            this.ButtonSelectFlight.UseColumnTextForButtonValue = true;
             // 
             // flightBindingSource
             // 
@@ -267,63 +334,6 @@
             this.button_Back.Text = "Back";
             this.button_Back.UseVisualStyleBackColor = true;
             this.button_Back.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // flightNoDataGridViewTextBoxColumn
-            // 
-            this.flightNoDataGridViewTextBoxColumn.DataPropertyName = "FlightNo";
-            this.flightNoDataGridViewTextBoxColumn.HeaderText = "FlightNo";
-            this.flightNoDataGridViewTextBoxColumn.Name = "flightNoDataGridViewTextBoxColumn";
-            this.flightNoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sourceDataGridViewTextBoxColumn
-            // 
-            this.sourceDataGridViewTextBoxColumn.DataPropertyName = "Source";
-            this.sourceDataGridViewTextBoxColumn.HeaderText = "Source";
-            this.sourceDataGridViewTextBoxColumn.Name = "sourceDataGridViewTextBoxColumn";
-            // 
-            // destinationDataGridViewTextBoxColumn
-            // 
-            this.destinationDataGridViewTextBoxColumn.DataPropertyName = "Destination";
-            this.destinationDataGridViewTextBoxColumn.HeaderText = "Destination";
-            this.destinationDataGridViewTextBoxColumn.Name = "destinationDataGridViewTextBoxColumn";
-            // 
-            // departureDateDataGridViewTextBoxColumn
-            // 
-            this.departureDateDataGridViewTextBoxColumn.DataPropertyName = "DepartureDate";
-            this.departureDateDataGridViewTextBoxColumn.HeaderText = "DepartureDate";
-            this.departureDateDataGridViewTextBoxColumn.Name = "departureDateDataGridViewTextBoxColumn";
-            // 
-            // arrivalDateDataGridViewTextBoxColumn
-            // 
-            this.arrivalDateDataGridViewTextBoxColumn.DataPropertyName = "ArrivalDate";
-            this.arrivalDateDataGridViewTextBoxColumn.HeaderText = "ArrivalDate";
-            this.arrivalDateDataGridViewTextBoxColumn.Name = "arrivalDateDataGridViewTextBoxColumn";
-            // 
-            // adultFareDataGridViewTextBoxColumn
-            // 
-            this.adultFareDataGridViewTextBoxColumn.DataPropertyName = "AdultFare";
-            this.adultFareDataGridViewTextBoxColumn.HeaderText = "AdultFare";
-            this.adultFareDataGridViewTextBoxColumn.Name = "adultFareDataGridViewTextBoxColumn";
-            // 
-            // childFareDataGridViewTextBoxColumn
-            // 
-            this.childFareDataGridViewTextBoxColumn.DataPropertyName = "ChildFare";
-            this.childFareDataGridViewTextBoxColumn.HeaderText = "ChildFare";
-            this.childFareDataGridViewTextBoxColumn.Name = "childFareDataGridViewTextBoxColumn";
-            // 
-            // totalPassengerDataGridViewTextBoxColumn
-            // 
-            this.totalPassengerDataGridViewTextBoxColumn.DataPropertyName = "TotalPassenger";
-            this.totalPassengerDataGridViewTextBoxColumn.HeaderText = "TotalPassenger";
-            this.totalPassengerDataGridViewTextBoxColumn.Name = "totalPassengerDataGridViewTextBoxColumn";
-            // 
-            // ButtonSelectFlight
-            // 
-            this.ButtonSelectFlight.HeaderText = "";
-            this.ButtonSelectFlight.Name = "ButtonSelectFlight";
-            this.ButtonSelectFlight.Text = "Choose this flight";
-            this.ButtonSelectFlight.ToolTipText = "Choose this flight";
-            this.ButtonSelectFlight.UseColumnTextForButtonValue = true;
             // 
             // DisplayFlight
             // 

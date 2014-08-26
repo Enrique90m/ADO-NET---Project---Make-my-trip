@@ -68,6 +68,27 @@ namespace ADO_NET___Proyecto_final
             Close();
         }
 
+        private void dataGridView_Flights_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Verifico que la columna en la que hizo click sea la del botton
+            if (e.ColumnIndex == dataGridView_Flights.Columns[8].Index)
+            {
+                //Creo objeto con los datos
+                Flight fl = new Flight(int.Parse(dataGridView_Flights.Rows[e.RowIndex].Cells[0].Value.ToString()),
+                                        ObjSearchFlight.Source,
+                                        ObjSearchFlight.Destination,
+                                        ObjSearchFlight.SearchedDate,
+                                        DateTime.Parse(dataGridView_Flights.Rows[e.RowIndex].Cells[4].Value.ToString()),
+                                        int.Parse(dataGridView_Flights.Rows[e.RowIndex].Cells[5].Value.ToString()),
+                                        int.Parse(dataGridView_Flights.Rows[e.RowIndex].Cells[6].Value.ToString()),
+                                        int.Parse(dataGridView_Flights.Rows[e.RowIndex].Cells[7].Value.ToString()));
+                Form_ReviewFlightDetails rev = new Form_ReviewFlightDetails(fl, ObjSearchFlight.NoOfAdults, ObjSearchFlight.NoOfChildren);
+                rev.Show();
+                this.Hide();
+
+            }
+        }
+
       
     }
 }
