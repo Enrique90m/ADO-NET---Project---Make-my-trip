@@ -61,11 +61,14 @@ namespace ADO_NET___Proyecto_final
 
         private void button_BookThisFlight_Click(object sender, EventArgs e)
         {
-            //DisplayFlight df = new DisplayFlight(sfl);
-            //df.Tag = this;
-            //df.Show(this);
-            //Hide();
-
+            int [] Pasajeos = new int[4];
+            Pasajeos[0] = iAdults;
+            Pasajeos[1] = iChildren;
+            Pasajeos[2] = iAdults + iChildren;
+            Pasajeos[3] = ObjFlight.FlightNo;
+            Form_TravelerDetails tr = new Form_TravelerDetails(Pasajeos);
+            this.Hide();
+            tr.Show();
 
         }
 
