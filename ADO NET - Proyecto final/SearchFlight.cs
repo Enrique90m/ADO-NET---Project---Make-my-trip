@@ -28,9 +28,9 @@ namespace ADO_NET___Proyecto_final
             dtSearchedDate = pdtSearchedDate;
         }
 
-        //public SearchFlight(SearchFlight sf)
-        //{
-        //}
+        public SearchFlight(SearchFlight sf)
+        {
+        }
 
 
         public string Source

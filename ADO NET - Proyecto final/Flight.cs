@@ -43,6 +43,10 @@ namespace ADO_NET___Proyecto_final
             iTotalPassenger = fl.iTotalPassenger;
         }
 
+        public Flight()
+        {
+        }
+
         public  string Source
         {
             get
