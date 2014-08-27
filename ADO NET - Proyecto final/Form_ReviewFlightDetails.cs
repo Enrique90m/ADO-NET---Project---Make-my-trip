@@ -14,15 +14,16 @@ namespace ADO_NET___Proyecto_final
     {
         Flight ObjFlight;
         int iAdults;
-        int iChildren;
+        int iChildren, iCustID;
         double BaseFareAdults, BaseFareChildren, TaxAdult, TaxChildren, TotalAdult, TotalChildren, GrandTotal;
 
-        public Form_ReviewFlightDetails(Flight fl, int piAdults, int piChildren)
+        public Form_ReviewFlightDetails(Flight fl, int piAdults, int piChildren, int piCustID)
         {
             InitializeComponent();
             ObjFlight = new Flight(fl);
             iAdults = piAdults;
             iChildren = piChildren;
+            iCustID = piCustID;
         }
 
         private void label29_Click(object sender, EventArgs e)
@@ -73,7 +74,7 @@ namespace ADO_NET___Proyecto_final
             Totals[2] = TaxAdult + TaxChildren;
             Totals[3] = GrandTotal;
 
-            Form_TravelerDetails tr = new Form_TravelerDetails(Pasajeos, Totals, ObjFlight);
+            Form_TravelerDetails tr = new Form_TravelerDetails(Pasajeos, Totals, ObjFlight, iCustID);
             this.Hide();
             tr.Show();
 

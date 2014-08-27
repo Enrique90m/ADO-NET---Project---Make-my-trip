@@ -16,7 +16,7 @@ namespace ADO_NET___Proyecto_final
         DateTime dtSearchedDate { get; set; }
 
         //Contructores
-        public SearchFlight(string psSource, string psDestination, int piTimeStart, int piTimeEnd, int piCustomerId, DateTime pdtDateOfBooking, int piNoOfAdults, int piNoOfChildren, DateTime pdtSearchedDate)
+        public SearchFlight(string psSource, string psDestination, int piTimeStart, int piTimeEnd, int piCustomerId, DateTime pdtDateOfBooking, int piNoOfAdults, int piNoOfChildren, DateTime pdtSearchedDate, int pCustomerID)
         {
             sSource = psSource;
             sDestination = psDestination;
@@ -26,6 +26,7 @@ namespace ADO_NET___Proyecto_final
             iNoOfChildren = piNoOfChildren;
             iNoOfAdults = piNoOfAdults;
             dtSearchedDate = pdtSearchedDate;
+            CustomerId = pCustomerID;
         }
 
         public SearchFlight(SearchFlight sf)

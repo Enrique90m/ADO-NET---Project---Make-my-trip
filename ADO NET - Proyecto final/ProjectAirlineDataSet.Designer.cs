@@ -3506,8 +3506,10 @@ SELECT FlightNo, Source, Destination, DepartureDate, ArrivalDate, AdultFare, Chi
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = @"SELECT FlightNo, Source, Destination, DepartureDate, ArrivalDate, AdultFare, ChildFare, TotalPassenger 
 FROM dbo.Flight
-WHERE Source = @Source AND Destination = @Destination 
+WHERE Source = @Source 
+AND Destination = @Destination 
  AND CONVERT(DATE, DepartureDate) = CONVERT(DATE, @DepartureDate) 
+AND ( datediff(hour, DepartureDate, @HourStart) >= 0  OR datediff(hour,DepartureDate,  @HourEnd) >= 0 )
 
 
                            ";
@@ -3515,6 +3517,8 @@ WHERE Source = @Source AND Destination = @Destination
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Source", global::System.Data.SqlDbType.VarChar, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Source", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Destination", global::System.Data.SqlDbType.VarChar, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Destination", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DepartureDate", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HourStart", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HourEnd", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "UPDATE [dbo].[Flight] SET [TotalPassenger] = (@TotalPassenger + [TotalPassenger])" +
@@ -3573,7 +3577,7 @@ WHERE Source = @Source AND Destination = @Destination
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int BuscaVuelos(ProjectAirlineDataSet.FlightDataTable dataTable, string Source, string Destination, string DepartureDate) {
+        public virtual int BuscaVuelos(ProjectAirlineDataSet.FlightDataTable dataTable, string Source, string Destination, string DepartureDate, System.DateTime HourStart, System.DateTime HourEnd) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((Source == null)) {
                 throw new global::System.ArgumentNullException("Source");
@@ -3593,6 +3597,8 @@ WHERE Source = @Source AND Destination = @Destination
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = ((string)(DepartureDate));
             }
+            this.Adapter.SelectCommand.Parameters[3].Value = ((System.DateTime)(HourStart));
+            this.Adapter.SelectCommand.Parameters[4].Value = ((System.DateTime)(HourEnd));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }

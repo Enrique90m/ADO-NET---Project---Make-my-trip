@@ -22,7 +22,7 @@ namespace ADO_NET___Proyecto_final
         {
             InitializeComponent();
             //Paso los datos al objeto local
-            ObjSearchFlight = new SearchFlight(sf.Source,sf.Destination,sf.TimeStart,sf.TimeEnd,sf.CustomerId,DateTime.Now,sf.NoOfAdults,sf.NoOfChildren, sf.SearchedDate);
+            ObjSearchFlight = new SearchFlight(sf.Source,sf.Destination,sf.TimeStart,sf.TimeEnd,sf.CustomerId,DateTime.Now,sf.NoOfAdults,sf.NoOfChildren, sf.SearchedDate,sf.CustomerId);
         }
 
         private void DisplayFlight_Load(object sender, EventArgs e)
@@ -43,13 +43,18 @@ namespace ADO_NET___Proyecto_final
                 label_Children.Text = ObjSearchFlight.NoOfChildren.ToString();
             }
 
+            DateTime dtStart = new DateTime(ObjSearchFlight.SearchedDate.Year,ObjSearchFlight.SearchedDate.Month,ObjSearchFlight.SearchedDate.Day,ObjSearchFlight.TimeStart,0,0);
+            DateTime dtEnd = new DateTime(ObjSearchFlight.SearchedDate.Year, ObjSearchFlight.SearchedDate.Month, ObjSearchFlight.SearchedDate.Day, ObjSearchFlight.TimeEnd, 0, 0);
+            //OR  datediff(hour, @HourEnd,DepartureDate) > 0 ) 
+
             //Muestro vuelos diponibles
             this.flightTableAdapter1.BuscaVuelos(this.projectAirlineDataSet.Flight,
                                                 ObjSearchFlight.Source,
                                                 ObjSearchFlight.Destination,
-                                                ObjSearchFlight.SearchedDate.ToString("yyyy-MM-dd"));
-                                              //ObjSearchFlight.TimeStart);
-//                                              ObjSearchFlight.TimeEnd;
+                                                ObjSearchFlight.SearchedDate.ToString("yyyy-MM-dd"),
+                                                dtStart,
+                                                dtEnd);
+                                                
 
             dataGridView_Flights.DataSource = this.projectAirlineDataSet.Flight;
 
@@ -82,7 +87,7 @@ namespace ADO_NET___Proyecto_final
                                         int.Parse(dataGridView_Flights.Rows[e.RowIndex].Cells[5].Value.ToString()),
                                         int.Parse(dataGridView_Flights.Rows[e.RowIndex].Cells[6].Value.ToString()),
                                         int.Parse(dataGridView_Flights.Rows[e.RowIndex].Cells[7].Value.ToString()));
-                Form_ReviewFlightDetails rev = new Form_ReviewFlightDetails(fl, ObjSearchFlight.NoOfAdults, ObjSearchFlight.NoOfChildren);
+                Form_ReviewFlightDetails rev = new Form_ReviewFlightDetails(fl, ObjSearchFlight.NoOfAdults, ObjSearchFlight.NoOfChildren, ObjSearchFlight.CustomerId);
                 rev.Show();
                 this.Hide();
 

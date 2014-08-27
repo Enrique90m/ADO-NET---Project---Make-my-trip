@@ -46,6 +46,11 @@ namespace ADO_NET___Proyecto_final
             //Imprimo su booking ID
             string BookingID = flight_BookingTableAdapter1.NewBookingId().ToString();
             MessageBox.Show("Vuelo reservado, su numero de reserva es:  " + BookingID);
+
+            //Regreso a formulario original
+            Form_SearchFlight sf = new Form_SearchFlight();
+            sf.Show();
+            Close();
         }
 
 
