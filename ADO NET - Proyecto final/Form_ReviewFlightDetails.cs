@@ -66,7 +66,14 @@ namespace ADO_NET___Proyecto_final
             Pasajeos[1] = iChildren;
             Pasajeos[2] = iAdults + iChildren;
             Pasajeos[3] = ObjFlight.FlightNo;
-            Form_TravelerDetails tr = new Form_TravelerDetails(Pasajeos);
+
+            double [] Totals = new double[4];
+            Totals[0] = TotalAdult;
+            Totals[1] = TotalChildren;
+            Totals[2] = TaxAdult + TaxChildren;
+            Totals[3] = GrandTotal;
+
+            Form_TravelerDetails tr = new Form_TravelerDetails(Pasajeos, Totals, ObjFlight);
             this.Hide();
             tr.Show();
 

@@ -13,9 +13,11 @@ namespace ADO_NET___Proyecto_final
     public partial class Form_TravelerDetails : Form
     {
         int iTotalAdults, iTotalChildren, iTotalTravelers, iIndicePasajerosCapturados;
+        int[] iPass;
         string sCustomerID;
-
-        public Form_TravelerDetails(int [] Passengers)
+        double [] dTotals;
+        Flight fs;
+        public Form_TravelerDetails(int [] Passengers, double [] totals, Flight pfl)
         {
             InitializeComponent();
             //Guardo pasajeros y total pasajeros
@@ -25,6 +27,10 @@ namespace ADO_NET___Proyecto_final
             //Guardo ID de cliente
             var SearchFlightForm = (Form_SearchFlight)Tag;
             //sCustomerID = SearchFlightForm.CustomerID;
+            dTotals = totals;
+            fs = new Flight(pfl);
+            iPass = Passengers;
+            tabControl1.SelectedIndex = 1;
         }
 
         private void Form_TravelerDetails_Load(object sender, EventArgs e)
@@ -78,6 +84,13 @@ namespace ADO_NET___Proyecto_final
                 button_Continue.Enabled = true;
                 button_Continue.Focus();
             }
+        }
+
+        private void button_Continue_Click(object sender, EventArgs e)
+        {
+            Form_FlightPayment fl = new Form_FlightPayment(dTotals, fs,iPass);
+            this.Hide();
+            fl.Show();
         }
     }
 }

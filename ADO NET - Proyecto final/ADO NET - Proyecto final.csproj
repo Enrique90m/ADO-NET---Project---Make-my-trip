@@ -53,6 +53,12 @@
     </Compile>
     <Compile Include="Flight.cs" />
     <Compile Include="FlightBooking.cs" />
+    <Compile Include="Form_FlightPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_FlightPayment.Designer.cs">
+      <DependentUpon>Form_FlightPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_ReviewFlightDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     <Compile Include="SearchFlight.cs" />
     <EmbeddedResource Include="DisplayFlight.resx">
       <DependentUpon>DisplayFlight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_FlightPayment.resx">
+      <DependentUpon>Form_FlightPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_ReviewFlightDetails.resx">
       <DependentUpon>Form_ReviewFlightDetails.cs</DependentUpon>
