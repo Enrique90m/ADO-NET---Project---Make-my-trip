@@ -46,6 +46,7 @@
             this.label_Total = new System.Windows.Forms.Label();
             this.label_TaxAmount = new System.Windows.Forms.Label();
             this.flight_BookingTableAdapter1 = new ADO_NET___Proyecto_final.ProjectAirlineDataSetTableAdapters.Flight_BookingTableAdapter();
+            this.flightTableAdapter1 = new ADO_NET___Proyecto_final.ProjectAirlineDataSetTableAdapters.FlightTableAdapter();
             label5 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -214,6 +215,10 @@
             // 
             this.flight_BookingTableAdapter1.ClearBeforeFill = true;
             // 
+            // flightTableAdapter1
+            // 
+            this.flightTableAdapter1.ClearBeforeFill = true;
+            // 
             // Form_FlightPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -256,5 +261,6 @@
         private System.Windows.Forms.Label label_Total;
         private System.Windows.Forms.Label label_TaxAmount;
         private ProjectAirlineDataSetTableAdapters.Flight_BookingTableAdapter flight_BookingTableAdapter1;
+        private ProjectAirlineDataSetTableAdapters.FlightTableAdapter flightTableAdapter1;
     }
 }

@@ -39,7 +39,11 @@ namespace ADO_NET___Proyecto_final
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Inserto reservacion
             flight_BookingTableAdapter1.InsertQuery(fl.FlightNo, 100, DateTime.Now, fl.Departure, iPass[0], iPass[1]);
+            //Actualizo total de pasajeros
+            flightTableAdapter1.UpdatePassenger(fl.TotalPassenger, fl.FlightNo);
+            //Imprimo su booking ID
             string BookingID = flight_BookingTableAdapter1.NewBookingId().ToString();
             MessageBox.Show("Vuelo reservado, su numero de reserva es:  " + BookingID);
         }
