@@ -49,10 +49,10 @@ namespace ADO_NET___Proyecto_final
             label_Arrival.Text = ObjFlight.ArrivalDate.ToString("yyyy-MM-dd");
             label_NoOfAdults.Text = iAdults.ToString();
             label_NoOfChildren.Text = iChildren.ToString();
-            label_BaseFareAdults.Text = iAdults.ToString() + "*" + ObjFlight.AdultFare.ToString() + "=" + BaseFareAdults.ToString();
-            label_BaseFareChildren.Text = iChildren.ToString() + "*" + ObjFlight.ChildrenFare.ToString() + "=" + BaseFareChildren.ToString();
-            label_TaxesAdult.Text = BaseFareAdults.ToString() + "* 10%" + "=" + TaxAdult.ToString();
-            label_TaxesChildren.Text = BaseFareChildren.ToString() + "* 10%" + "=" + TaxChildren.ToString();
+            label_BaseFareAdults.Text = iAdults.ToString() + " * " + ObjFlight.AdultFare.ToString() + " = " + BaseFareAdults.ToString();
+            label_BaseFareChildren.Text = iChildren.ToString() + " * " + ObjFlight.ChildrenFare.ToString() + " = " + BaseFareChildren.ToString();
+            label_TaxesAdult.Text = BaseFareAdults.ToString() + " * 10% " + " = " + TaxAdult.ToString();
+            label_TaxesChildren.Text = BaseFareChildren.ToString() + " * 10% " + " = " + TaxChildren.ToString();
             label_TotalAdults.Text = TotalAdult.ToString();
             label_TotalChildren.Text = TotalChildren.ToString();
             label_GrandTotal.Text = GrandTotal.ToString();
@@ -68,7 +68,7 @@ namespace ADO_NET___Proyecto_final
             Pasajeos[3] = ObjFlight.FlightNo;
 
             double [] Totals = new double[4];
-            Totals[0] = TotalAdult;
+            Totals[0] = BaseFareAdults;
             Totals[1] = TotalChildren;
             Totals[2] = TaxAdult + TaxChildren;
             Totals[3] = GrandTotal;

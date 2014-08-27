@@ -186,7 +186,7 @@
             this.groupBox1.Controls.Add(this.label_Lname);
             this.groupBox1.Controls.Add(this.label_Fname);
             this.groupBox1.Controls.Add(this.label_Title);
-            this.groupBox1.Location = new System.Drawing.Point(38, 12);
+            this.groupBox1.Location = new System.Drawing.Point(19, 14);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(543, 105);
             this.groupBox1.TabIndex = 1;
@@ -223,16 +223,16 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.tabControl1);
-            this.groupBox2.Location = new System.Drawing.Point(45, 145);
+            this.groupBox2.Location = new System.Drawing.Point(26, 143);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(682, 216);
+            this.groupBox2.Size = new System.Drawing.Size(531, 178);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Traveler details";
             // 
             // button_Next
             // 
-            this.button_Next.Location = new System.Drawing.Point(226, 365);
+            this.button_Next.Location = new System.Drawing.Point(207, 367);
             this.button_Next.Name = "button_Next";
             this.button_Next.Size = new System.Drawing.Size(154, 46);
             this.button_Next.TabIndex = 3;
@@ -243,7 +243,7 @@
             // button_Continue
             // 
             this.button_Continue.Enabled = false;
-            this.button_Continue.Location = new System.Drawing.Point(422, 412);
+            this.button_Continue.Location = new System.Drawing.Point(403, 414);
             this.button_Continue.Name = "button_Continue";
             this.button_Continue.Size = new System.Drawing.Size(154, 46);
             this.button_Continue.TabIndex = 4;
@@ -259,7 +259,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(825, 466);
+            this.ClientSize = new System.Drawing.Size(588, 466);
             this.Controls.Add(this.button_Continue);
             this.Controls.Add(this.button_Next);
             this.Controls.Add(this.groupBox2);

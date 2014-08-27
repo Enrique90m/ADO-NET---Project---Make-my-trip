@@ -3980,12 +3980,26 @@ SELECT BookingId, FlightNo, CustomerId, DateOfBooking, DateOfDeparture, NoOfAdul
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT BookingId, FlightNo, CustomerId, DateOfBooking, DateOfDeparture, NoOfAdult" +
                 "s, NoOfChildren FROM dbo.Flight_Booking";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "INSERT INTO [dbo].[Flight_Booking] ([BookingId], [FlightNo], [CustomerId], [DateO" +
+                "fBooking], [DateOfDeparture], [NoOfAdults], [NoOfChildren]) VALUES (@BookingId, " +
+                "@FlightNo, @CustomerId, @DateOfBooking, @DateOfDeparture, @NoOfAdults, @NoOfChil" +
+                "dren);\r\n";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BookingId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "BookingId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FlightNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "FlightNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateOfBooking", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "DateOfBooking", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateOfDeparture", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "DateOfDeparture", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoOfAdults", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NoOfAdults", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoOfChildren", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NoOfChildren", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4158,6 +4172,36 @@ SELECT BookingId, FlightNo, CustomerId, DateOfBooking, DateOfDeparture, NoOfAdul
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(int FlightNo, int CustomerId, System.DateTime DateOfBooking, System.DateTime DateOfDeparture, int NoOfAdults, int NoOfChildren, string Original_BookingId, int Original_FlightNo, int Original_CustomerId, System.DateTime Original_DateOfBooking, System.DateTime Original_DateOfDeparture, int Original_NoOfAdults, int Original_NoOfChildren) {
             return this.Update(Original_BookingId, FlightNo, CustomerId, DateOfBooking, DateOfDeparture, NoOfAdults, NoOfChildren, Original_BookingId, Original_FlightNo, Original_CustomerId, Original_DateOfBooking, Original_DateOfDeparture, Original_NoOfAdults, Original_NoOfChildren);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertFlightBooking(int BookingId, int FlightNo, int CustomerId, System.DateTime DateOfBooking, System.DateTime DateOfDeparture, int NoOfAdults, int NoOfChildren) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(BookingId));
+            command.Parameters[1].Value = ((int)(FlightNo));
+            command.Parameters[2].Value = ((int)(CustomerId));
+            command.Parameters[3].Value = ((System.DateTime)(DateOfBooking));
+            command.Parameters[4].Value = ((System.DateTime)(DateOfDeparture));
+            command.Parameters[5].Value = ((int)(NoOfAdults));
+            command.Parameters[6].Value = ((int)(NoOfChildren));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
