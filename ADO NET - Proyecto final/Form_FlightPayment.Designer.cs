@@ -45,6 +45,7 @@
             this.label_ChildrenFare = new System.Windows.Forms.Label();
             this.label_Total = new System.Windows.Forms.Label();
             this.label_TaxAmount = new System.Windows.Forms.Label();
+            this.flight_BookingTableAdapter1 = new ADO_NET___Proyecto_final.ProjectAirlineDataSetTableAdapters.Flight_BookingTableAdapter();
             label5 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -135,6 +136,7 @@
             this.button1.TabIndex = 30;
             this.button1.Text = "Make payment";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label_Source
             // 
@@ -208,6 +210,10 @@
             this.label_TaxAmount.TabIndex = 37;
             this.label_TaxAmount.Text = "label1";
             // 
+            // flight_BookingTableAdapter1
+            // 
+            this.flight_BookingTableAdapter1.ClearBeforeFill = true;
+            // 
             // Form_FlightPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,5 +255,6 @@
         private System.Windows.Forms.Label label_ChildrenFare;
         private System.Windows.Forms.Label label_Total;
         private System.Windows.Forms.Label label_TaxAmount;
+        private ProjectAirlineDataSetTableAdapters.Flight_BookingTableAdapter flight_BookingTableAdapter1;
     }
 }

@@ -1396,8 +1396,6 @@ namespace ADO_NET___Proyecto_final {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class Flight_BookingDataTable : global::System.Data.TypedTableBase<Flight_BookingRow> {
             
-            private global::System.Data.DataColumn columnBookingId;
-            
             private global::System.Data.DataColumn columnFlightNo;
             
             private global::System.Data.DataColumn columnCustomerId;
@@ -1441,14 +1439,6 @@ namespace ADO_NET___Proyecto_final {
             protected Flight_BookingDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BookingIdColumn {
-                get {
-                    return this.columnBookingId;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1536,10 +1526,9 @@ namespace ADO_NET___Proyecto_final {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Flight_BookingRow AddFlight_BookingRow(string BookingId, FlightRow parentFlightRowByFlightNo_FK, int CustomerId, System.DateTime DateOfBooking, System.DateTime DateOfDeparture, int NoOfAdults, int NoOfChildren) {
+            public Flight_BookingRow AddFlight_BookingRow(FlightRow parentFlightRowByFlightNo_FK, int CustomerId, System.DateTime DateOfBooking, System.DateTime DateOfDeparture, int NoOfAdults, int NoOfChildren) {
                 Flight_BookingRow rowFlight_BookingRow = ((Flight_BookingRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        BookingId,
                         null,
                         CustomerId,
                         DateOfBooking,
@@ -1547,18 +1536,11 @@ namespace ADO_NET___Proyecto_final {
                         NoOfAdults,
                         NoOfChildren};
                 if ((parentFlightRowByFlightNo_FK != null)) {
-                    columnValuesArray[1] = parentFlightRowByFlightNo_FK[0];
+                    columnValuesArray[0] = parentFlightRowByFlightNo_FK[0];
                 }
                 rowFlight_BookingRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFlight_BookingRow);
                 return rowFlight_BookingRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Flight_BookingRow FindByBookingId(string BookingId) {
-                return ((Flight_BookingRow)(this.Rows.Find(new object[] {
-                            BookingId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1578,7 +1560,6 @@ namespace ADO_NET___Proyecto_final {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnBookingId = base.Columns["BookingId"];
                 this.columnFlightNo = base.Columns["FlightNo"];
                 this.columnCustomerId = base.Columns["CustomerId"];
                 this.columnDateOfBooking = base.Columns["DateOfBooking"];
@@ -1590,8 +1571,6 @@ namespace ADO_NET___Proyecto_final {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnBookingId = new global::System.Data.DataColumn("BookingId", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBookingId);
                 this.columnFlightNo = new global::System.Data.DataColumn("FlightNo", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFlightNo);
                 this.columnCustomerId = new global::System.Data.DataColumn("CustomerId", typeof(int), null, global::System.Data.MappingType.Element);
@@ -1604,11 +1583,6 @@ namespace ADO_NET___Proyecto_final {
                 base.Columns.Add(this.columnNoOfAdults);
                 this.columnNoOfChildren = new global::System.Data.DataColumn("NoOfChildren", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNoOfChildren);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnBookingId}, true));
-                this.columnBookingId.AllowDBNull = false;
-                this.columnBookingId.Unique = true;
-                this.columnBookingId.MaxLength = 4;
                 this.columnFlightNo.AllowDBNull = false;
                 this.columnCustomerId.AllowDBNull = false;
                 this.columnDateOfBooking.AllowDBNull = false;
@@ -2358,17 +2332,6 @@ namespace ADO_NET___Proyecto_final {
             internal Flight_BookingRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tableFlight_Booking = ((Flight_BookingDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string BookingId {
-                get {
-                    return ((string)(this[this.tableFlight_Booking.BookingIdColumn]));
-                }
-                set {
-                    this[this.tableFlight_Booking.BookingIdColumn] = value;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3918,7 +3881,6 @@ WHERE Source = @Source AND Destination = @Destination
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Flight_Booking";
-            tableMapping.ColumnMappings.Add("BookingId", "BookingId");
             tableMapping.ColumnMappings.Add("FlightNo", "FlightNo");
             tableMapping.ColumnMappings.Add("CustomerId", "CustomerId");
             tableMapping.ColumnMappings.Add("DateOfBooking", "DateOfBooking");
@@ -3939,10 +3901,10 @@ WHERE Source = @Source AND Destination = @Destination
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NoOfChildren", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoOfChildren", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Flight_Booking] ([BookingId], [FlightNo], [CustomerId], [DateOfBooking], [DateOfDeparture], [NoOfAdults], [NoOfChildren]) VALUES (@BookingId, @FlightNo, @CustomerId, @DateOfBooking, @DateOfDeparture, @NoOfAdults, @NoOfChildren);
-SELECT BookingId, FlightNo, CustomerId, DateOfBooking, DateOfDeparture, NoOfAdults, NoOfChildren FROM Flight_Booking WHERE (BookingId = @BookingId)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Flight_Booking] ([FlightNo], [CustomerId], [DateOfBooking], [DateOfD" +
+                "eparture], [NoOfAdults], [NoOfChildren]) VALUES (@FlightNo, @CustomerId, @DateOf" +
+                "Booking, @DateOfDeparture, @NoOfAdults, @NoOfChildren)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BookingId", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BookingId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FlightNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FlightNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateOfBooking", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateOfBooking", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3980,26 +3942,28 @@ SELECT BookingId, FlightNo, CustomerId, DateOfBooking, DateOfDeparture, NoOfAdul
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT BookingId, FlightNo, CustomerId, DateOfBooking, DateOfDeparture, NoOfAdult" +
-                "s, NoOfChildren FROM dbo.Flight_Booking";
+            this._commandCollection[0].CommandText = "SELECT FlightNo, CustomerId, DateOfBooking, DateOfDeparture, NoOfAdults, NoOfChil" +
+                "dren FROM Flight_Booking";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "INSERT INTO [dbo].[Flight_Booking] ([BookingId], [FlightNo], [CustomerId], [DateO" +
-                "fBooking], [DateOfDeparture], [NoOfAdults], [NoOfChildren]) VALUES (@BookingId, " +
-                "@FlightNo, @CustomerId, @DateOfBooking, @DateOfDeparture, @NoOfAdults, @NoOfChil" +
-                "dren);\r\n";
+            this._commandCollection[1].CommandText = "INSERT INTO [Flight_Booking] ([FlightNo], [CustomerId], [DateOfBooking], [DateOfD" +
+                "eparture], [NoOfAdults], [NoOfChildren]) VALUES (@FlightNo, @CustomerId, @DateOf" +
+                "Booking, @DateOfDeparture, @NoOfAdults, @NoOfChildren)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BookingId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "BookingId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FlightNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "FlightNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateOfBooking", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "DateOfBooking", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateOfDeparture", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "DateOfDeparture", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoOfAdults", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NoOfAdults", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoOfChildren", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NoOfChildren", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT MAX(BookingId) FROM Flight_Booking";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4092,19 +4056,13 @@ SELECT BookingId, FlightNo, CustomerId, DateOfBooking, DateOfDeparture, NoOfAdul
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string BookingId, int FlightNo, int CustomerId, System.DateTime DateOfBooking, System.DateTime DateOfDeparture, int NoOfAdults, int NoOfChildren) {
-            if ((BookingId == null)) {
-                throw new global::System.ArgumentNullException("BookingId");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(BookingId));
-            }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(FlightNo));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(CustomerId));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(DateOfBooking));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(DateOfDeparture));
-            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(NoOfAdults));
-            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(NoOfChildren));
+        public virtual int Insert(int FlightNo, int CustomerId, System.DateTime DateOfBooking, System.DateTime DateOfDeparture, int NoOfAdults, int NoOfChildren) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(FlightNo));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(CustomerId));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(DateOfBooking));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(DateOfDeparture));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(NoOfAdults));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(NoOfChildren));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4169,24 +4127,15 @@ SELECT BookingId, FlightNo, CustomerId, DateOfBooking, DateOfDeparture, NoOfAdul
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int FlightNo, int CustomerId, System.DateTime DateOfBooking, System.DateTime DateOfDeparture, int NoOfAdults, int NoOfChildren, string Original_BookingId, int Original_FlightNo, int Original_CustomerId, System.DateTime Original_DateOfBooking, System.DateTime Original_DateOfDeparture, int Original_NoOfAdults, int Original_NoOfChildren) {
-            return this.Update(Original_BookingId, FlightNo, CustomerId, DateOfBooking, DateOfDeparture, NoOfAdults, NoOfChildren, Original_BookingId, Original_FlightNo, Original_CustomerId, Original_DateOfBooking, Original_DateOfDeparture, Original_NoOfAdults, Original_NoOfChildren);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertFlightBooking(int BookingId, int FlightNo, int CustomerId, System.DateTime DateOfBooking, System.DateTime DateOfDeparture, int NoOfAdults, int NoOfChildren) {
+        public virtual int InsertQuery(int FlightNo, int CustomerId, System.DateTime DateOfBooking, System.DateTime DateOfDeparture, int NoOfAdults, int NoOfChildren) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
-            command.Parameters[0].Value = ((int)(BookingId));
-            command.Parameters[1].Value = ((int)(FlightNo));
-            command.Parameters[2].Value = ((int)(CustomerId));
-            command.Parameters[3].Value = ((System.DateTime)(DateOfBooking));
-            command.Parameters[4].Value = ((System.DateTime)(DateOfDeparture));
-            command.Parameters[5].Value = ((int)(NoOfAdults));
-            command.Parameters[6].Value = ((int)(NoOfChildren));
+            command.Parameters[0].Value = ((int)(FlightNo));
+            command.Parameters[1].Value = ((int)(CustomerId));
+            command.Parameters[2].Value = ((System.DateTime)(DateOfBooking));
+            command.Parameters[3].Value = ((System.DateTime)(DateOfDeparture));
+            command.Parameters[4].Value = ((int)(NoOfAdults));
+            command.Parameters[5].Value = ((int)(NoOfChildren));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4202,6 +4151,34 @@ SELECT BookingId, FlightNo, CustomerId, DateOfBooking, DateOfDeparture, NoOfAdul
                 }
             }
             return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> NewBookingId() {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
         }
     }
     
