@@ -1732,6 +1732,8 @@ namespace ADO_NET___Proyecto_final {
             
             private global::System.Data.DataColumn columnLastName;
             
+            private global::System.Data.DataColumn columnPassengerId;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public PassengerDetailsDataTable() {
@@ -1807,6 +1809,14 @@ namespace ADO_NET___Proyecto_final {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PassengerIdColumn {
+                get {
+                    return this.columnPassengerId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1849,7 +1859,8 @@ namespace ADO_NET___Proyecto_final {
                         null,
                         Title,
                         FistName,
-                        LastName};
+                        LastName,
+                        null};
                 if ((parentFlightRowByFlightNo_FK2 != null)) {
                     columnValuesArray[1] = parentFlightRowByFlightNo_FK2[0];
                 }
@@ -1887,6 +1898,7 @@ namespace ADO_NET___Proyecto_final {
                 this.columnTitle = base.Columns["Title"];
                 this.columnFistName = base.Columns["FistName"];
                 this.columnLastName = base.Columns["LastName"];
+                this.columnPassengerId = base.Columns["PassengerId"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1902,8 +1914,12 @@ namespace ADO_NET___Proyecto_final {
                 base.Columns.Add(this.columnFistName);
                 this.columnLastName = new global::System.Data.DataColumn("LastName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLastName);
+                this.columnPassengerId = new global::System.Data.DataColumn("PassengerId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPassengerId);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCustomerId}, true));
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint2", new global::System.Data.DataColumn[] {
+                                this.columnPassengerId}, false));
                 this.columnCustomerId.AllowDBNull = false;
                 this.columnCustomerId.Unique = true;
                 this.columnFlightNo.AllowDBNull = false;
@@ -1912,6 +1928,12 @@ namespace ADO_NET___Proyecto_final {
                 this.columnFistName.MaxLength = 50;
                 this.columnLastName.AllowDBNull = false;
                 this.columnLastName.MaxLength = 50;
+                this.columnPassengerId.AutoIncrement = true;
+                this.columnPassengerId.AutoIncrementSeed = -1;
+                this.columnPassengerId.AutoIncrementStep = -1;
+                this.columnPassengerId.AllowDBNull = false;
+                this.columnPassengerId.ReadOnly = true;
+                this.columnPassengerId.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2483,6 +2505,17 @@ namespace ADO_NET___Proyecto_final {
                 }
                 set {
                     this[this.tablePassengerDetails.LastNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int PassengerId {
+                get {
+                    return ((int)(this[this.tablePassengerDetails.PassengerIdColumn]));
+                }
+                set {
+                    this[this.tablePassengerDetails.PassengerIdColumn] = value;
                 }
             }
             
@@ -3209,11 +3242,16 @@ namespace ADO_NET___Proyecto_final.ProjectAirlineDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT CustomerId, FistName, LastName, Address FROM dbo.Customer";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT FistName, LastName, Address FROM dbo.Customer\r\nWHERE CustomerId = @CustID";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3235,6 +3273,18 @@ namespace ADO_NET___Proyecto_final.ProjectAirlineDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual ProjectAirlineDataSet.CustomerDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            ProjectAirlineDataSet.CustomerDataTable dataTable = new ProjectAirlineDataSet.CustomerDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ProjectAirlineDataSet.CustomerDataTable CustomerDetails(int CustID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(CustID));
             ProjectAirlineDataSet.CustomerDataTable dataTable = new ProjectAirlineDataSet.CustomerDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -3521,8 +3571,13 @@ AND ( datediff(hour, DepartureDate, @HourStart) >= 0  OR datediff(hour,Departure
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HourEnd", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "UPDATE [dbo].[Flight] SET [TotalPassenger] = (@TotalPassenger + [TotalPassenger])" +
-                " WHERE (([FlightNo] = @Original_FlightNo) ";
+            this._commandCollection[2].CommandText = @"DECLARE @TotPass
+
+SELECT @TotPass = [TotalPassenger] FROM  [dbo].[Flight] WHERE ([FlightNo] = @Original_FlightNo) 
+
+SET @TotPass = @TotPass + @TotalPassenger 
+
+UPDATE [dbo].[Flight] SET [TotalPassenger] =  @TotPass  WHERE (([FlightNo] = @Original_FlightNo) ";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Source", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Source", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Destination", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Destination", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3542,8 +3597,8 @@ AND ( datediff(hour, DepartureDate, @HourStart) >= 0  OR datediff(hour,Departure
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FlightNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "FlightNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "UPDATE       Flight\r\nSET                TotalPassenger = @TotalPassenger + TotalP" +
-                "assenger \r\nWHERE        (FlightNo = @FlightNo)";
+            this._commandCollection[3].CommandText = "UPDATE [dbo].[Flight] \r\n\r\nSET [TotalPassenger] =   @TotalPassenger + [TotalPassen" +
+                "ger] \r\n\r\n WHERE ([FlightNo] = @FlightNo) ";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalPassenger", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TotalPassenger", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FlightNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "FlightNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4442,10 +4497,11 @@ SELECT BookingId, FlightNo, CustomerId, DateOfBooking, DateOfDeparture, NoOfAdul
             tableMapping.ColumnMappings.Add("Title", "Title");
             tableMapping.ColumnMappings.Add("FistName", "FistName");
             tableMapping.ColumnMappings.Add("LastName", "LastName");
+            tableMapping.ColumnMappings.Add("PassengerId", "PassengerId");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [PassengerDetails] WHERE (([CustomerId] = @Original_CustomerId) AND ([FlightNo] = @Original_FlightNo) AND ((@IsNull_Title = 1 AND [Title] IS NULL) OR ([Title] = @Original_Title)) AND ([FistName] = @Original_FistName) AND ([LastName] = @Original_LastName))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [PassengerDetails] WHERE (([CustomerId] = @Original_CustomerId) AND ([FlightNo] = @Original_FlightNo) AND ((@IsNull_Title = 1 AND [Title] IS NULL) OR ([Title] = @Original_Title)) AND ([FistName] = @Original_FistName) AND ([LastName] = @Original_LastName) AND ([PassengerId] = @Original_PassengerId))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CustomerId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FlightNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FlightNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4453,10 +4509,11 @@ SELECT BookingId, FlightNo, CustomerId, DateOfBooking, DateOfDeparture, NoOfAdul
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Title", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FistName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FistName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PassengerId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PassengerId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = @"INSERT INTO [PassengerDetails] ([CustomerId], [FlightNo], [Title], [FistName], [LastName]) VALUES (@CustomerId, @FlightNo, @Title, @FistName, @LastName);
-SELECT CustomerId, FlightNo, Title, FistName, LastName FROM PassengerDetails WHERE (CustomerId = @CustomerId)";
+SELECT CustomerId, FlightNo, Title, FistName, LastName, PassengerId FROM PassengerDetails WHERE (PassengerId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FlightNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FlightNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4465,8 +4522,8 @@ SELECT CustomerId, FlightNo, Title, FistName, LastName FROM PassengerDetails WHE
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [PassengerDetails] SET [CustomerId] = @CustomerId, [FlightNo] = @FlightNo, [Title] = @Title, [FistName] = @FistName, [LastName] = @LastName WHERE (([CustomerId] = @Original_CustomerId) AND ([FlightNo] = @Original_FlightNo) AND ((@IsNull_Title = 1 AND [Title] IS NULL) OR ([Title] = @Original_Title)) AND ([FistName] = @Original_FistName) AND ([LastName] = @Original_LastName));
-SELECT CustomerId, FlightNo, Title, FistName, LastName FROM PassengerDetails WHERE (CustomerId = @CustomerId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [PassengerDetails] SET [CustomerId] = @CustomerId, [FlightNo] = @FlightNo, [Title] = @Title, [FistName] = @FistName, [LastName] = @LastName WHERE (([CustomerId] = @Original_CustomerId) AND ([FlightNo] = @Original_FlightNo) AND ((@IsNull_Title = 1 AND [Title] IS NULL) OR ([Title] = @Original_Title)) AND ([FistName] = @Original_FistName) AND ([LastName] = @Original_LastName) AND ([PassengerId] = @Original_PassengerId));
+SELECT CustomerId, FlightNo, Title, FistName, LastName, PassengerId FROM PassengerDetails WHERE (PassengerId = @PassengerId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FlightNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FlightNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4479,6 +4536,8 @@ SELECT CustomerId, FlightNo, Title, FistName, LastName FROM PassengerDetails WHE
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Title", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FistName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FistName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PassengerId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PassengerId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PassengerId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PassengerId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4494,12 +4553,13 @@ SELECT CustomerId, FlightNo, Title, FistName, LastName FROM PassengerDetails WHE
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT CustomerId, FlightNo, Title, FistName, LastName FROM PassengerDetails";
+            this._commandCollection[0].CommandText = "SELECT CustomerId, FlightNo, Title, FistName, LastName, PassengerId FROM Passenge" +
+                "rDetails";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"INSERT INTO [dbo].[PassengerDetails] ([CustomerId],[FlightNo], [Title], [FistName], [LastName]) VALUES (@CustomerId, @FlightNo, @Title, @FistName, @LastName);
-SELECT CustomerId, FlightNo, Title, FistName, LastName FROM PassengerDetails WHERE (CustomerId = @CustomerId)";
+            this._commandCollection[1].CommandText = "INSERT INTO [dbo].[PassengerDetails] ([CustomerId],[FlightNo], [Title], [FistName" +
+                "], [LastName]) VALUES (@CustomerId, @FlightNo, @Title, @FistName, @LastName);\r\n";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FlightNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "FlightNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4565,7 +4625,7 @@ SELECT CustomerId, FlightNo, Title, FistName, LastName FROM PassengerDetails WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_CustomerId, int Original_FlightNo, string Original_Title, string Original_FistName, string Original_LastName) {
+        public virtual int Delete(int Original_CustomerId, int Original_FlightNo, string Original_Title, string Original_FistName, string Original_LastName, int Original_PassengerId) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_CustomerId));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_FlightNo));
             if ((Original_Title == null)) {
@@ -4588,6 +4648,7 @@ SELECT CustomerId, FlightNo, Title, FistName, LastName FROM PassengerDetails WHE
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_LastName));
             }
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_PassengerId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4649,7 +4710,7 @@ SELECT CustomerId, FlightNo, Title, FistName, LastName FROM PassengerDetails WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int CustomerId, int FlightNo, string Title, string FistName, string LastName, int Original_CustomerId, int Original_FlightNo, string Original_Title, string Original_FistName, string Original_LastName) {
+        public virtual int Update(int CustomerId, int FlightNo, string Title, string FistName, string LastName, int Original_CustomerId, int Original_FlightNo, string Original_Title, string Original_FistName, string Original_LastName, int Original_PassengerId, int PassengerId) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(CustomerId));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(FlightNo));
             if ((Title == null)) {
@@ -4692,6 +4753,8 @@ SELECT CustomerId, FlightNo, Title, FistName, LastName FROM PassengerDetails WHE
             else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_LastName));
             }
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_PassengerId));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(PassengerId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4712,8 +4775,8 @@ SELECT CustomerId, FlightNo, Title, FistName, LastName FROM PassengerDetails WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int FlightNo, string Title, string FistName, string LastName, int Original_CustomerId, int Original_FlightNo, string Original_Title, string Original_FistName, string Original_LastName) {
-            return this.Update(Original_CustomerId, FlightNo, Title, FistName, LastName, Original_CustomerId, Original_FlightNo, Original_Title, Original_FistName, Original_LastName);
+        public virtual int Update(int FlightNo, string Title, string FistName, string LastName, int Original_CustomerId, int Original_FlightNo, string Original_Title, string Original_FistName, string Original_LastName, int Original_PassengerId, int PassengerId) {
+            return this.Update(Original_CustomerId, FlightNo, Title, FistName, LastName, Original_CustomerId, Original_FlightNo, Original_Title, Original_FistName, Original_LastName, Original_PassengerId, PassengerId);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

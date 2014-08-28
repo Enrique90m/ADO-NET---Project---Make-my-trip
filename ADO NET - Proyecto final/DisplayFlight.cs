@@ -86,7 +86,8 @@ namespace ADO_NET___Proyecto_final
                                         DateTime.Parse(dataGridView_Flights.Rows[e.RowIndex].Cells[4].Value.ToString()),
                                         int.Parse(dataGridView_Flights.Rows[e.RowIndex].Cells[5].Value.ToString()),
                                         int.Parse(dataGridView_Flights.Rows[e.RowIndex].Cells[6].Value.ToString()),
-                                        int.Parse(dataGridView_Flights.Rows[e.RowIndex].Cells[7].Value.ToString()));
+                                        ObjSearchFlight.NoOfAdults + ObjSearchFlight.NoOfChildren);
+
                 Form_ReviewFlightDetails rev = new Form_ReviewFlightDetails(fl, ObjSearchFlight.NoOfAdults, ObjSearchFlight.NoOfChildren, ObjSearchFlight.CustomerId);
                 rev.Show();
                 this.Hide();

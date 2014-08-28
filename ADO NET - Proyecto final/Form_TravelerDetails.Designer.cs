@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox_ChildrenLname = new System.Windows.Forms.TextBox();
-            this.textBox_ChildrenFname = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.textBox_AdultLname = new System.Windows.Forms.TextBox();
             this.textBox_AdultFname = new System.Windows.Forms.TextBox();
@@ -41,17 +36,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox_Title = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBox_ChildrenLname = new System.Windows.Forms.TextBox();
+            this.textBox_ChildrenFname = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label_Lname = new System.Windows.Forms.Label();
             this.label_Fname = new System.Windows.Forms.Label();
-            this.label_Title = new System.Windows.Forms.Label();
+            this.label_Adress = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button_Next = new System.Windows.Forms.Button();
             this.button_Continue = new System.Windows.Forms.Button();
             this.passengerDetailsTableAdapter1 = new ADO_NET___Proyecto_final.ProjectAirlineDataSetTableAdapters.PassengerDetailsTableAdapter();
+            this.customerTableAdapter1 = new ADO_NET___Proyecto_final.ProjectAirlineDataSetTableAdapters.CustomerTableAdapter();
             this.tabControl1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -59,60 +60,14 @@
             // tabControl1
             // 
             this.tabControl1.Alignment = System.Windows.Forms.TabAlignment.Right;
-            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(-7, 19);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(561, 195);
             this.tabControl1.TabIndex = 0;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tabPage2.Controls.Add(this.textBox_ChildrenLname);
-            this.tabPage2.Controls.Add(this.textBox_ChildrenFname);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Location = new System.Drawing.Point(4, 4);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(534, 187);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            // 
-            // textBox_ChildrenLname
-            // 
-            this.textBox_ChildrenLname.Location = new System.Drawing.Point(96, 78);
-            this.textBox_ChildrenLname.Name = "textBox_ChildrenLname";
-            this.textBox_ChildrenLname.Size = new System.Drawing.Size(265, 20);
-            this.textBox_ChildrenLname.TabIndex = 12;
-            // 
-            // textBox_ChildrenFname
-            // 
-            this.textBox_ChildrenFname.Location = new System.Drawing.Point(96, 28);
-            this.textBox_ChildrenFname.Name = "textBox_ChildrenFname";
-            this.textBox_ChildrenFname.Size = new System.Drawing.Size(265, 20);
-            this.textBox_ChildrenFname.TabIndex = 11;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 81);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Last name: ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(37, 33);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "First name: ";
             // 
             // tabPage1
             // 
@@ -181,11 +136,57 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Title: ";
             // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage2.Controls.Add(this.textBox_ChildrenLname);
+            this.tabPage2.Controls.Add(this.textBox_ChildrenFname);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Location = new System.Drawing.Point(4, 4);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(534, 187);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            // 
+            // textBox_ChildrenLname
+            // 
+            this.textBox_ChildrenLname.Location = new System.Drawing.Point(96, 78);
+            this.textBox_ChildrenLname.Name = "textBox_ChildrenLname";
+            this.textBox_ChildrenLname.Size = new System.Drawing.Size(265, 20);
+            this.textBox_ChildrenLname.TabIndex = 12;
+            // 
+            // textBox_ChildrenFname
+            // 
+            this.textBox_ChildrenFname.Location = new System.Drawing.Point(96, 28);
+            this.textBox_ChildrenFname.Name = "textBox_ChildrenFname";
+            this.textBox_ChildrenFname.Size = new System.Drawing.Size(265, 20);
+            this.textBox_ChildrenFname.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(37, 81);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Last name: ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(37, 33);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "First name: ";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label_Lname);
             this.groupBox1.Controls.Add(this.label_Fname);
-            this.groupBox1.Controls.Add(this.label_Title);
+            this.groupBox1.Controls.Add(this.label_Adress);
             this.groupBox1.Location = new System.Drawing.Point(19, 14);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(543, 105);
@@ -196,7 +197,7 @@
             // label_Lname
             // 
             this.label_Lname.AutoSize = true;
-            this.label_Lname.Location = new System.Drawing.Point(293, 39);
+            this.label_Lname.Location = new System.Drawing.Point(268, 34);
             this.label_Lname.Name = "label_Lname";
             this.label_Lname.Size = new System.Drawing.Size(23, 13);
             this.label_Lname.TabIndex = 2;
@@ -205,20 +206,20 @@
             // label_Fname
             // 
             this.label_Fname.AutoSize = true;
-            this.label_Fname.Location = new System.Drawing.Point(214, 39);
+            this.label_Fname.Location = new System.Drawing.Point(189, 34);
             this.label_Fname.Name = "label_Fname";
             this.label_Fname.Size = new System.Drawing.Size(23, 13);
             this.label_Fname.TabIndex = 1;
             this.label_Fname.Text = "title";
             // 
-            // label_Title
+            // label_Adress
             // 
-            this.label_Title.AutoSize = true;
-            this.label_Title.Location = new System.Drawing.Point(139, 39);
-            this.label_Title.Name = "label_Title";
-            this.label_Title.Size = new System.Drawing.Size(23, 13);
-            this.label_Title.TabIndex = 0;
-            this.label_Title.Text = "title";
+            this.label_Adress.AutoSize = true;
+            this.label_Adress.Location = new System.Drawing.Point(189, 63);
+            this.label_Adress.Name = "label_Adress";
+            this.label_Adress.Size = new System.Drawing.Size(23, 13);
+            this.label_Adress.TabIndex = 0;
+            this.label_Adress.Text = "title";
             // 
             // groupBox2
             // 
@@ -255,23 +256,28 @@
             // 
             this.passengerDetailsTableAdapter1.ClearBeforeFill = true;
             // 
+            // customerTableAdapter1
+            // 
+            this.customerTableAdapter1.ClearBeforeFill = true;
+            // 
             // Form_TravelerDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(588, 466);
+            this.ClientSize = new System.Drawing.Size(573, 467);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button_Continue);
             this.Controls.Add(this.button_Next);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form_TravelerDetails";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Make my trip - Traveler details";
             this.Load += new System.EventHandler(this.Form_TravelerDetails_Load);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -297,10 +303,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label_Lname;
         private System.Windows.Forms.Label label_Fname;
-        private System.Windows.Forms.Label label_Title;
+        private System.Windows.Forms.Label label_Adress;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button_Next;
         private System.Windows.Forms.Button button_Continue;
         private ProjectAirlineDataSetTableAdapters.PassengerDetailsTableAdapter passengerDetailsTableAdapter1;
+        private ProjectAirlineDataSetTableAdapters.CustomerTableAdapter customerTableAdapter1;
     }
 }

@@ -15,13 +15,17 @@ namespace ADO_NET___Proyecto_final
         double [] dTotals;
         Flight fl;
         int[] iPass;
+        int iCustID;
+        string [,] PassengerDetails;
 
-        public Form_FlightPayment(double [] oTotals, Flight pfl, int [] pass)
+        public Form_FlightPayment(double[] oTotals, Flight pfl, int[] pass, int piCustID, string[,] pPassengerDetails)
         {
             InitializeComponent();
             dTotals = oTotals;
             fl = new Flight(pfl);
             iPass = pass;
+            iCustID = piCustID;
+            PassengerDetails = pPassengerDetails;
         }
 
         private void Form_FlightPayment_Load(object sender, EventArgs e)
@@ -40,9 +44,18 @@ namespace ADO_NET___Proyecto_final
         private void button1_Click(object sender, EventArgs e)
         {
             //Inserto reservacion
-            flight_BookingTableAdapter1.InsertQuery(fl.FlightNo, 100, DateTime.Now, fl.Departure, iPass[0], iPass[1]);
+            flight_BookingTableAdapter1.InsertQuery(fl.FlightNo, iCustID, DateTime.Now, fl.Departure, iPass[0], iPass[1]);
+
             //Actualizo total de pasajeros
             flightTableAdapter1.UpdatePassenger(fl.TotalPassenger, fl.FlightNo);
+            
+            //Inserto pasajeros en tabla 
+            for (int i = 0; i < iPass[0]; i++)
+                    passengerDetailsTableAdapter1.InsertPassenger(iCustID, fl.FlightNo, PassengerDetails[i,0], PassengerDetails[i,1], PassengerDetails[i,2]);
+
+            for (int i = 0; i < iPass[1]; i++)   
+                    passengerDetailsTableAdapter1.InsertPassenger(iCustID, fl.FlightNo, "CHL", PassengerDetails[i, 1], PassengerDetails[i, 2]);
+
             //Imprimo su booking ID
             string BookingID = flight_BookingTableAdapter1.NewBookingId().ToString();
             MessageBox.Show("Vuelo reservado, su numero de reserva es:  " + BookingID);

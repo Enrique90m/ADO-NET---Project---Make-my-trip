@@ -70,7 +70,7 @@ namespace ADO_NET___Proyecto_final
 
             double [] Totals = new double[4];
             Totals[0] = BaseFareAdults;
-            Totals[1] = TotalChildren;
+            Totals[1] = BaseFareChildren;
             Totals[2] = TaxAdult + TaxChildren;
             Totals[3] = GrandTotal;
 
