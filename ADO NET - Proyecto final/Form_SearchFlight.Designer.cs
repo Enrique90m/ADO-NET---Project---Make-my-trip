@@ -114,6 +114,33 @@
             label2.TabIndex = 7;
             label2.Text = "To";
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(120, 126);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(84, 13);
+            label3.TabIndex = 10;
+            label3.Text = "Departure date: ";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(147, 162);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(42, 13);
+            label4.TabIndex = 12;
+            label4.Text = "Adults: ";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(286, 161);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(51, 13);
+            label5.TabIndex = 13;
+            label5.Text = "Children: ";
+            // 
             // projectAirlineDataSet
             // 
             this.projectAirlineDataSet.DataSetName = "ProjectAirlineDataSet";
@@ -147,6 +174,7 @@
             this.ComboBox_Source.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cityBindingSource, "CityName", true));
             this.ComboBox_Source.DataSource = this.cityBindingSource1;
             this.ComboBox_Source.DisplayMember = "CityName";
+            this.ComboBox_Source.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBox_Source.FormattingEnabled = true;
             this.ComboBox_Source.Location = new System.Drawing.Point(123, 47);
             this.ComboBox_Source.Name = "ComboBox_Source";
@@ -164,6 +192,7 @@
             this.ComboBox_Destination.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cityBindingSource, "CityName", true));
             this.ComboBox_Destination.DataSource = this.cityBindingSource2;
             this.ComboBox_Destination.DisplayMember = "CityName";
+            this.ComboBox_Destination.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBox_Destination.FormattingEnabled = true;
             this.ComboBox_Destination.Location = new System.Drawing.Point(367, 50);
             this.ComboBox_Destination.Name = "ComboBox_Destination";
@@ -186,6 +215,7 @@
             this.customerIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "CustomerId", true));
             this.customerIdComboBox.DataSource = this.customerBindingSource;
             this.customerIdComboBox.DisplayMember = "CustomerId";
+            this.customerIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.customerIdComboBox.FormattingEnabled = true;
             this.customerIdComboBox.Location = new System.Drawing.Point(231, 17);
             this.customerIdComboBox.Name = "customerIdComboBox";
@@ -194,6 +224,7 @@
             // 
             // comboBox_TimeStart
             // 
+            this.comboBox_TimeStart.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_TimeStart.FormattingEnabled = true;
             this.comboBox_TimeStart.Items.AddRange(new object[] {
             "1",
@@ -227,21 +258,13 @@
             // 
             // comboBox_TimeEnd
             // 
+            this.comboBox_TimeEnd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_TimeEnd.Enabled = false;
             this.comboBox_TimeEnd.FormattingEnabled = true;
             this.comboBox_TimeEnd.Location = new System.Drawing.Point(306, 83);
             this.comboBox_TimeEnd.Name = "comboBox_TimeEnd";
             this.comboBox_TimeEnd.Size = new System.Drawing.Size(57, 21);
             this.comboBox_TimeEnd.TabIndex = 9;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(120, 126);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(84, 13);
-            label3.TabIndex = 10;
-            label3.Text = "Departure date: ";
             // 
             // dateTimePicker_Departure
             // 
@@ -250,26 +273,9 @@
             this.dateTimePicker_Departure.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker_Departure.TabIndex = 11;
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(147, 162);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(42, 13);
-            label4.TabIndex = 12;
-            label4.Text = "Adults: ";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(286, 161);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(51, 13);
-            label5.TabIndex = 13;
-            label5.Text = "Children: ";
-            // 
             // comboBox_Adults
             // 
+            this.comboBox_Adults.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_Adults.FormattingEnabled = true;
             this.comboBox_Adults.Items.AddRange(new object[] {
             "1",
@@ -283,6 +289,7 @@
             // 
             // comboBox_Children
             // 
+            this.comboBox_Children.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_Children.FormattingEnabled = true;
             this.comboBox_Children.Items.AddRange(new object[] {
             "1",
@@ -304,7 +311,7 @@
             this.button_SearchFlights.UseVisualStyleBackColor = true;
             this.button_SearchFlights.Click += new System.EventHandler(this.button_SearchFlights_Click);
             // 
-            // SearchFlight
+            // Form_SearchFlight
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -326,7 +333,7 @@
             this.Controls.Add(this.ComboBox_Destination);
             this.Controls.Add(cityNameLabel);
             this.Controls.Add(this.ComboBox_Source);
-            this.Name = "SearchFlight";
+            this.Name = "Form_SearchFlight";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Make my trip - SearchFlight";
             this.Load += new System.EventHandler(this.SearchFlight_Load);

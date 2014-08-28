@@ -30,6 +30,7 @@
         {
             this.label_To = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label_Arrival = new System.Windows.Forms.Label();
             this.label_Departure = new System.Windows.Forms.Label();
             this.label_Airline = new System.Windows.Forms.Label();
@@ -68,16 +69,16 @@
             // label_To
             // 
             this.label_To.AutoSize = true;
-            this.label_To.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_To.Location = new System.Drawing.Point(132, 27);
+            this.label_To.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_To.Location = new System.Drawing.Point(135, 22);
             this.label_To.Name = "label_To";
-            this.label_To.Size = new System.Drawing.Size(23, 15);
+            this.label_To.Size = new System.Drawing.Size(33, 24);
             this.label_To.TabIndex = 28;
             this.label_To.Text = " to";
-            this.label_To.Visible = false;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label_Arrival);
             this.groupBox1.Controls.Add(this.label_Departure);
             this.groupBox1.Controls.Add(this.label_Airline);
@@ -96,10 +97,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Review flight details";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(16, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 24);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "From";
+            // 
             // label_Arrival
             // 
             this.label_Arrival.AutoSize = true;
-            this.label_Arrival.Location = new System.Drawing.Point(451, 90);
+            this.label_Arrival.Location = new System.Drawing.Point(339, 90);
             this.label_Arrival.Name = "label_Arrival";
             this.label_Arrival.Size = new System.Drawing.Size(26, 13);
             this.label_Arrival.TabIndex = 37;
@@ -108,7 +119,7 @@
             // label_Departure
             // 
             this.label_Departure.AutoSize = true;
-            this.label_Departure.Location = new System.Drawing.Point(337, 90);
+            this.label_Departure.Location = new System.Drawing.Point(225, 90);
             this.label_Departure.Name = "label_Departure";
             this.label_Departure.Size = new System.Drawing.Size(26, 13);
             this.label_Departure.TabIndex = 36;
@@ -117,11 +128,12 @@
             // label_Airline
             // 
             this.label_Airline.AutoSize = true;
-            this.label_Airline.Location = new System.Drawing.Point(228, 90);
+            this.label_Airline.Location = new System.Drawing.Point(522, 90);
             this.label_Airline.Name = "label_Airline";
             this.label_Airline.Size = new System.Drawing.Size(42, 13);
             this.label_Airline.TabIndex = 35;
             this.label_Airline.Text = "XXXXX";
+            this.label_Airline.Visible = false;
             // 
             // label_FlightNo
             // 
@@ -136,7 +148,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(441, 57);
+            this.label10.Location = new System.Drawing.Point(329, 57);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(47, 15);
             this.label10.TabIndex = 34;
@@ -146,7 +158,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(318, 57);
+            this.label8.Location = new System.Drawing.Point(206, 57);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 15);
             this.label8.TabIndex = 33;
@@ -156,11 +168,12 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(228, 57);
+            this.label6.Location = new System.Drawing.Point(522, 57);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 15);
             this.label6.TabIndex = 32;
             this.label6.Text = "Airline";
+            this.label6.Visible = false;
             // 
             // label4
             // 
@@ -175,20 +188,20 @@
             // label_Destination
             // 
             this.label_Destination.AutoSize = true;
-            this.label_Destination.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Destination.Location = new System.Drawing.Point(222, 27);
+            this.label_Destination.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Destination.Location = new System.Drawing.Point(216, 27);
             this.label_Destination.Name = "label_Destination";
-            this.label_Destination.Size = new System.Drawing.Size(31, 15);
+            this.label_Destination.Size = new System.Drawing.Size(31, 16);
             this.label_Destination.TabIndex = 31;
             this.label_Destination.Text = "To: ";
             // 
             // label_Source
             // 
             this.label_Source.AutoSize = true;
-            this.label_Source.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Source.Location = new System.Drawing.Point(32, 27);
+            this.label_Source.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Source.Location = new System.Drawing.Point(85, 27);
             this.label_Source.Name = "label_Source";
-            this.label_Source.Size = new System.Drawing.Size(31, 15);
+            this.label_Source.Size = new System.Drawing.Size(31, 16);
             this.label_Source.TabIndex = 30;
             this.label_Source.Text = "To: ";
             // 
@@ -468,5 +481,6 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label_GrandTotal;
         private System.Windows.Forms.Button button_BookThisFlight;
+        private System.Windows.Forms.Label label1;
     }
 }

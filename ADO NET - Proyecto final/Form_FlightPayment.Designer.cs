@@ -61,72 +61,80 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(222, 16);
+            label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label5.Location = new System.Drawing.Point(196, 16);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(26, 13);
+            label5.Size = new System.Drawing.Size(31, 15);
             label5.TabIndex = 15;
             label5.Text = "To: ";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(83, 16);
+            label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label4.Location = new System.Drawing.Point(57, 16);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(66, 13);
+            label4.Size = new System.Drawing.Size(86, 15);
             label4.TabIndex = 14;
             label4.Text = "Ticket from: ";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(83, 104);
+            label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label3.Location = new System.Drawing.Point(57, 104);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(51, 13);
+            label3.Size = new System.Drawing.Size(69, 15);
             label3.TabIndex = 19;
             label3.Text = "Children: ";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(83, 60);
+            label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label6.Location = new System.Drawing.Point(57, 60);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(42, 13);
+            label6.Size = new System.Drawing.Size(54, 15);
             label6.TabIndex = 18;
             label6.Text = "Adults: ";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new System.Drawing.Point(83, 145);
+            label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label10.Location = new System.Drawing.Point(57, 145);
             label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(84, 13);
+            label10.Size = new System.Drawing.Size(112, 15);
             label10.TabIndex = 22;
             label10.Text = "Total adult fare: ";
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new System.Drawing.Point(83, 183);
+            label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label12.Location = new System.Drawing.Point(57, 183);
             label12.Name = "label12";
-            label12.Size = new System.Drawing.Size(98, 13);
+            label12.Size = new System.Drawing.Size(132, 15);
             label12.TabIndex = 24;
             label12.Text = "Total children fare: ";
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new System.Drawing.Point(83, 221);
+            label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label14.Location = new System.Drawing.Point(57, 221);
             label14.Name = "label14";
-            label14.Size = new System.Drawing.Size(69, 13);
+            label14.Size = new System.Drawing.Size(90, 15);
             label14.TabIndex = 26;
             label14.Text = "Tax amount: ";
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new System.Drawing.Point(83, 257);
+            label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label16.Location = new System.Drawing.Point(57, 257);
             label16.Name = "label16";
-            label16.Size = new System.Drawing.Size(75, 13);
+            label16.Size = new System.Drawing.Size(99, 15);
             label16.TabIndex = 28;
             label16.Text = "Total amount: ";
             // 
@@ -143,7 +151,7 @@
             // label_Source
             // 
             this.label_Source.AutoSize = true;
-            this.label_Source.Location = new System.Drawing.Point(156, 16);
+            this.label_Source.Location = new System.Drawing.Point(149, 18);
             this.label_Source.Name = "label_Source";
             this.label_Source.Size = new System.Drawing.Size(35, 13);
             this.label_Source.TabIndex = 31;
@@ -152,7 +160,7 @@
             // label_Destination
             // 
             this.label_Destination.AutoSize = true;
-            this.label_Destination.Location = new System.Drawing.Point(266, 16);
+            this.label_Destination.Location = new System.Drawing.Point(243, 18);
             this.label_Destination.Name = "label_Destination";
             this.label_Destination.Size = new System.Drawing.Size(35, 13);
             this.label_Destination.TabIndex = 32;
@@ -161,7 +169,7 @@
             // label_NoOfAdults
             // 
             this.label_NoOfAdults.AutoSize = true;
-            this.label_NoOfAdults.Location = new System.Drawing.Point(140, 60);
+            this.label_NoOfAdults.Location = new System.Drawing.Point(121, 62);
             this.label_NoOfAdults.Name = "label_NoOfAdults";
             this.label_NoOfAdults.Size = new System.Drawing.Size(35, 13);
             this.label_NoOfAdults.TabIndex = 33;
@@ -170,7 +178,7 @@
             // label_NoOfChildren
             // 
             this.label_NoOfChildren.AutoSize = true;
-            this.label_NoOfChildren.Location = new System.Drawing.Point(140, 104);
+            this.label_NoOfChildren.Location = new System.Drawing.Point(121, 106);
             this.label_NoOfChildren.Name = "label_NoOfChildren";
             this.label_NoOfChildren.Size = new System.Drawing.Size(35, 13);
             this.label_NoOfChildren.TabIndex = 34;
@@ -247,6 +255,7 @@
             this.Controls.Add(label5);
             this.Controls.Add(label4);
             this.Name = "Form_FlightPayment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Make my trip - FlightPayment";
             this.Load += new System.EventHandler(this.Form_FlightPayment_Load);
             this.ResumeLayout(false);

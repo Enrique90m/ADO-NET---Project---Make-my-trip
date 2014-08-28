@@ -45,7 +45,6 @@ namespace ADO_NET___Proyecto_final
 
             DateTime dtStart = new DateTime(ObjSearchFlight.SearchedDate.Year,ObjSearchFlight.SearchedDate.Month,ObjSearchFlight.SearchedDate.Day,ObjSearchFlight.TimeStart,0,0);
             DateTime dtEnd = new DateTime(ObjSearchFlight.SearchedDate.Year, ObjSearchFlight.SearchedDate.Month, ObjSearchFlight.SearchedDate.Day, ObjSearchFlight.TimeEnd, 0, 0);
-            //OR  datediff(hour, @HourEnd,DepartureDate) > 0 ) 
 
             //Muestro vuelos diponibles
             this.flightTableAdapter1.BuscaVuelos(this.projectAirlineDataSet.Flight,

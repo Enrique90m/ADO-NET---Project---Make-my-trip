@@ -50,10 +50,11 @@ namespace ADO_NET___Proyecto_final
             flightTableAdapter1.UpdatePassenger(fl.TotalPassenger, fl.FlightNo);
             
             //Inserto pasajeros en tabla 
-            for (int i = 0; i < iPass[0]; i++)
+            int i;
+            for (i = 0; i < iPass[0]; i++)
                     passengerDetailsTableAdapter1.InsertPassenger(iCustID, fl.FlightNo, PassengerDetails[i,0], PassengerDetails[i,1], PassengerDetails[i,2]);
 
-            for (int i = 0; i < iPass[1]; i++)   
+            for (i = i ; i <= iPass[1]; i++)   
                     passengerDetailsTableAdapter1.InsertPassenger(iCustID, fl.FlightNo, "CHL", PassengerDetails[i, 1], PassengerDetails[i, 2]);
 
             //Imprimo su booking ID
