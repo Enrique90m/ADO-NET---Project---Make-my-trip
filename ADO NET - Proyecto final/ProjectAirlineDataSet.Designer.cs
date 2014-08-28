@@ -3559,7 +3559,7 @@ FROM dbo.Flight
 WHERE Source = @Source 
 AND Destination = @Destination 
  AND CONVERT(DATE, DepartureDate) = CONVERT(DATE, @DepartureDate) 
-AND ( datediff(hour, DepartureDate, @HourStart) >= 0  OR datediff(hour,DepartureDate,  @HourEnd) >= 0 )
+AND ( datediff(hour,@HourStart, DepartureDate) >= 0  AND datediff(hour,DepartureDate,  @HourEnd) >= 0 )
 
 
                            ";
